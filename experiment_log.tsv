@@ -1,2 +1,3 @@
 iteration	status	output_chars	runtime_s	verdict
 1	crash	0	0.7	GraphQL errors: You must have at least $0.01 in your account balance to create an endpoint.
+1	crash	0	1.4	GraphQL errors: You must have at least $0.01 in your account balance to create an endpoint.
