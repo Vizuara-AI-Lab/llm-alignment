@@ -419,37 +419,56 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \backup@length=\skip61
 \ar@cellbox=\box67
 ))
+(microtype.sty
+Package: microtype 2022/03/14 v3.0d Micro-typographical refinements (RS)
+\MT@toks=\toks35
+\MT@tempbox=\box68
+\MT@count=\count326
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1027.
+LaTeX Info: Redefining \leftprotrusion on input line 1028.
+LaTeX Info: Redefining \rightprotrusion on input line 1036.
+LaTeX Info: Redefining \textls on input line 1195.
+\MT@outer@kern=\dimen195
+LaTeX Info: Redefining \textmicrotypecontext on input line 1781.
+\MT@listname@count=\count327
+ (microtype-xetex.def
+File: microtype-xetex.def 2022/03/14 v3.0d Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 236.
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+ (microtype.cfg
+File: microtype.cfg 2022/03/14 v3.0d microtype main configuration file (RS)
+))
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 23.
-
-(paper.aux)
+h' as default language. on input line 25.
+ (paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
-3.
+5.
  (ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -485,7 +504,7 @@ LaTeX Font Info:    ... okay on input line 23.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 23.
+Package hyperref Info: Link coloring OFF on input line 25.
 (nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (refcount.sty
@@ -493,16 +512,16 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count326
+\c@section@level=\count328
 )
-LaTeX Info: Redefining \ref on input line 23.
-LaTeX Info: Redefining \pageref on input line 23.
-LaTeX Info: Redefining \nameref on input line 23.
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \nameref on input line 25.
  (paper.out) (paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
 
-\c@lstlisting=\count327
+\c@lstlisting=\count329
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -511,213 +530,207 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 23.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+or `english'. on input line 25.
+LaTeX Info: Redefining \microtypecontext on input line 25.
+Package microtype Info: Applying patch `item' on input line 25.
+Package microtype Info: Applying patch `toc' on input line 25.
+Package microtype Info: Applying patch `eqnum' on input line 25.
+Package microtype Info: Applying patch `footnote' on input line 25.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+ (mt-LatinModernRoman.cfg
+File: mt-LatinModernRoman.cfg 2021/02/21 v1.1 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+(mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
 
  (umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
 
  (umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Overfull \hbox (7.30577pt too wide) in paragraph at lines 37--38
-\TU/lmr/m/n/10.95 Models fine-tuned solely through SFT, such as \TU/lmtt/m/n/10
-.95 alignment-handbook__zephyr-7b-sft-full\TU/lmr/m/n/10.95 , achieve
- []
 
+LaTeX Warning: Citation `ouyang2022training' on page 1 undefined on input line 
+38.
+
+
+LaTeX Warning: Citation `christiano2017deep' on page 1 undefined on input line 
+38.
+
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 [1
 
 ]
-Overfull \hbox (17.35567pt too wide) in paragraph at lines 46--47
-\TU/lmr/m/n/10.95 thereby surpassing the reported performance of the \TU/lmtt/m
-/n/10.95 alignment-handbook__zephyr-7b-sft-full
+Underfull \hbox (badness 1442) in paragraph at lines 46--47
+[]\TU/lmr/m/n/10.95 We quantitatively assess the helpfulness and instruction-fo
+llowing capabilities of the
  []
 
 
-LaTeX Warning: Citation `hallucination_survey' on page 2 undefined on input lin
-e 54.
+Underfull \hbox (badness 2426) in paragraph at lines 46--47
+\TU/lmtt/m/n/10.95 HuggingFaceH4/zephyr-7b-sft-full \TU/lmr/m/n/10.95 model on 
+a diverse set of beneficial prompts,
+ []
 
 
-LaTeX Warning: Citation `zhao2024hallucination' on page 2 undefined on input li
-ne 54.
+LaTeX Warning: Reference `sec:related_work' on page 2 undefined on input line 5
+2.
 
 
-LaTeX Warning: Citation `truthfulqa' on page 2 undefined on input line 54.
+LaTeX Warning: Reference `sec:methods' on page 2 undefined on input line 52.
 
 
-LaTeX Warning: Citation `factscore' on page 2 undefined on input line 54.
+LaTeX Warning: Reference `sec:results' on page 2 undefined on input line 52.
 
 
-LaTeX Warning: Citation `helm' on page 2 undefined on input line 54.
+LaTeX Warning: Citation `askell2021alignment' on page 2 undefined on input line
+ 57.
+
+
+LaTeX Warning: Citation `wang2018glue' on page 2 undefined on input line 57.
+
+
+LaTeX Warning: Citation `wang2019superglue' on page 2 undefined on input line 5
+7.
+
+
+LaTeX Warning: Citation `zheng2023judging' on page 2 undefined on input line 57
+.
+
+
+LaTeX Warning: Citation `liang2022holistic' on page 2 undefined on input line 5
+7.
+
+
+LaTeX Warning: Citation `dubois2023alpacaeval' on page 2 undefined on input lin
+e 57.
+
+
+LaTeX Warning: Citation `zheng2023judging' on page 2 undefined on input line 60
+.
+
+
+LaTeX Warning: Citation `chiang2023vicuna' on page 2 undefined on input line 60
+.
+
+
+LaTeX Warning: Citation `liang2022holistic' on page 2 undefined on input line 6
+0.
+
+
+LaTeX Warning: Citation `wang2023prompting' on page 2 undefined on input line 6
+0.
+
+
+LaTeX Warning: Citation `perez2022red' on page 2 undefined on input line 60.
+
+
+LaTeX Warning: Citation `ouyang2022training' on page 2 undefined on input line 
+60.
 
 [2]
 
-LaTeX Warning: Citation `instructgpt' on page 3 undefined on input line 57.
+LaTeX Warning: Citation `ouyang2022training' on page 3 undefined on input line 
+63.
 
 
-LaTeX Warning: Citation `alpaca' on page 3 undefined on input line 57.
+LaTeX Warning: Citation `christiano2023deep' on page 3 undefined on input line 
+63.
 
 
-LaTeX Warning: Citation `vicuna' on page 3 undefined on input line 57.
+LaTeX Warning: Citation `ganguli2023red' on page 3 undefined on input line 63.
 
 
-LaTeX Warning: Citation `llama2' on page 3 undefined on input line 57.
+LaTeX Warning: Citation `bai2022constitutional' on page 3 undefined on input li
+ne 63.
 
 
-LaTeX Warning: Citation `oasst1' on page 3 undefined on input line 57.
+LaTeX Warning: Citation `borgeaud2022learning' on page 3 undefined on input lin
+e 63.
 
 
-LaTeX Warning: Citation `dolly' on page 3 undefined on input line 57.
+LaTeX Warning: Citation `touvron2023llama2' on page 3 undefined on input line 6
+6.
 
 
-LaTeX Warning: Citation `rlhf_openai' on page 3 undefined on input line 60.
-
-
-LaTeX Warning: Citation `instructgpt' on page 3 undefined on input line 60.
-
-
-LaTeX Warning: Citation `sparrow' on page 3 undefined on input line 60.
-
-
-LaTeX Warning: Citation `dpo' on page 3 undefined on input line 60.
-
-
-LaTeX Warning: Citation `dpo_applications' on page 3 undefined on input line 60
+LaTeX Warning: Citation `jiang2023mistral' on page 3 undefined on input line 66
 .
 
 
-LaTeX Warning: Citation `alignment_handbook' on page 3 undefined on input line 
-60.
+LaTeX Warning: Citation `tunstall2023zephyr' on page 3 undefined on input line 
+66.
 
 [3]
-
-LaTeX Warning: Reference `fig:overall_architecture' on page 4 undefined on inpu
-t line 68.
-
-
-LaTeX Warning: Citation `mistral_paper' on page 4 undefined on input line 71.
-
-
-LaTeX Warning: Citation `eval_harness_paper' on page 4 undefined on input line 
-73.
-
-
-LaTeX Warning: Citation `truthfulqa_paper' on page 4 undefined on input line 73
-.
-
-
-Overfull \hbox (65.18408pt too wide) in paragraph at lines 76--77
-\TU/lmr/m/n/10.95 The first alignment intervention involves Supervised Fine-Tun
-ing (SFT) of the base \TU/lmtt/m/n/10.95 mistralai/Mistral-7B-v0.1
- []
-
-
-Overfull \hbox (125.39055pt too wide) in paragraph at lines 79--80
-\TU/lmr/m/n/10.95 For SFT, we utilize a high-quality, diverse instruction-follo
-wing dataset derived from \TU/lmtt/m/n/10.95 alignment-handbook/data/sft-mix-7k
-\TU/lmr/m/n/10.95 .
+Overfull \hbox (19.34956pt too wide) in paragraph at lines 81--82
+\TU/lmr/m/n/10.95 Language Model (LLM) is employed as the judge. Specifically, 
+\TU/lmtt/m/n/10.95 mistralai/Mistral-7B-Instruct-v0.2
  []
 
 [4]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 105.
 
-LaTeX Warning: Citation `qlora_paper' on page 5 undefined on input line 82.
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Overfull \hbox (106.56953pt too wide) in paragraph at lines 96--97
-[]\TU/lmr/bx/n/10.95 Quantization: \TU/lmr/m/n/10.95 4-bit QLoRA with \TU/lmtt/
-m/n/10.95 bnb_4bit_quant_type='nf4' \TU/lmr/m/n/10.95 and \TU/lmtt/m/n/10.95 bn
-b_4bit_compute_dtype=torch.bfloat16\TU/lmr/m/n/10.95 . 
+[5] [6]
+Overfull \hbox (53.42491pt too wide) in paragraph at lines 157--158
+\TU/lmr/m/n/10.95 ment context referenced \TU/lmtt/m/n/10.95 open-llm-leaderboa
+rd-old/details_alignment-handbook__zephyr-7b-sft-full
  []
-
-
-Overfull \hbox (27.25778pt too wide) in paragraph at lines 97--98
-[]\TU/lmr/bx/n/10.95 LoRA Configuration: \TU/lmtt/m/n/10.95 r=64\TU/lmr/m/n/10.
-95 , \TU/lmtt/m/n/10.95 lora_alpha=16\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 lor
-a_dropout=0.1\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 target_modules=['q_proj',
- []
-
-
-Overfull \hbox (3.31772pt too wide) in paragraph at lines 97--98
-\TU/lmtt/m/n/10.95 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'up_proj', 'down_
-proj', 'lm_head']\TU/lmr/m/n/10.95 . 
- []
-
-
-LaTeX Warning: Citation `dpo_paper' on page 5 undefined on input line 103.
-
-[5]
-Overfull \hbox (106.56953pt too wide) in paragraph at lines 124--125
-[]\TU/lmr/bx/n/10.95 Quantization: \TU/lmr/m/n/10.95 4-bit QLoRA with \TU/lmtt/
-m/n/10.95 bnb_4bit_quant_type='nf4' \TU/lmr/m/n/10.95 and \TU/lmtt/m/n/10.95 bn
-b_4bit_compute_dtype=torch.bfloat16\TU/lmr/m/n/10.95 . 
- []
-
-
-Overfull \hbox (27.25778pt too wide) in paragraph at lines 125--126
-[]\TU/lmr/bx/n/10.95 LoRA Configuration: \TU/lmtt/m/n/10.95 r=64\TU/lmr/m/n/10.
-95 , \TU/lmtt/m/n/10.95 lora_alpha=16\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 lor
-a_dropout=0.1\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 target_modules=['q_proj',
- []
-
-
-Overfull \hbox (3.31772pt too wide) in paragraph at lines 125--126
-\TU/lmtt/m/n/10.95 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'up_proj', 'down_
-proj', 'lm_head']\TU/lmr/m/n/10.95 . 
- []
-
-
-LaTeX Warning: Reference `alg:training_process' on page 6 undefined on input li
-ne 128.
-
-
-LaTeX Warning: Citation `[CITE]' on page 6 undefined on input line 136.
-
-
-LaTeX Warning: Citation `[CITE]' on page 6 undefined on input line 136.
-
-
-LaTeX Warning: Citation `[CITE]' on page 6 undefined on input line 136.
-
-
-LaTeX Warning: Citation `[CITE]' on page 6 undefined on input line 136.
-
-[6]
-
-LaTeX Warning: Citation `[CITE]' on page 7 undefined on input line 138.
-
-
-LaTeX Warning: Citation `[CITE]' on page 7 undefined on input line 141.
-
-
-LaTeX Warning: Citation `[CITE]' on page 7 undefined on input line 141.
-
-
-Overfull \hbox (41.23434pt too wide) in paragraph at lines 141--142
-\TU/lmr/m/n/10.95 methods. The second baseline was an internal, unaligned found
-ational model: \TU/lmtt/m/n/10.95 mistralai/Mistral-7B-v0.1
- []
-
-
-LaTeX Warning: Citation `[CITE]' on page 7 undefined on input line 144.
-
-
-LaTeX Warning: Citation `[CITE]' on page 7 undefined on input line 144.
-
-
-LaTeX Warning: Citation `[CITE]' on page 7 undefined on input line 144.
 
 [7]
-Overfull \hbox (27.61337pt too wide) in paragraph at lines 162--175
- [][] 
- []
 
-[8] [9] [10] [11] [12] (paper.aux)
+LaTeX Warning: Reference `tab:overall_scores' on page 8 undefined on input line
+ 177.
+
+
+LaTeX Warning: Reference `fig:harmful_response_types' on page 8 undefined on in
+put line 179.
+
+
+LaTeX Warning: Reference `tab:judge_ablation' on page 8 undefined on input line
+ 185.
+
+[8]
+
+LaTeX Warning: Reference `fig:judge_prompt_ablation' on page 9 undefined on inp
+ut line 188.
+
+[9] [10]
+File: figures/figure_1.png Graphic file (type bmp)
+<figures/figure_1.png>
+File: figures/figure_2.png Graphic file (type bmp)
+<figures/figure_2.png>
+File: figures/figure_3.png Graphic file (type bmp)
+<figures/figure_3.png>
+ [11
+
+]
+File: figures/figure_4.png Graphic file (type bmp)
+<figures/figure_4.png>
+ [12] [13] [14] (paper.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 378523E2A8644C114078E32692489B7A;5088.
+(rerunfilecheck)             Checksum: 5110F061E52F1D518A8A74CF20877593;4682.
  )
-Output written on paper.xdv (12 pages, 362940 bytes).
+Output written on paper.xdv (14 pages, 336840 bytes).
