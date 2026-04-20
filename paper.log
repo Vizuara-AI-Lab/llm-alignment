@@ -289,45 +289,167 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box55
 \enit@count@id=\count287
 \enitdp@description=\count288
-) (l3backend-xetex.def
-File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
-\c__kernel_sys_dvipdfmx_version_int=\count289
-\l__color_backend_stack_int=\count290
-\g__color_backend_stack_int=\count291
-\g__graphics_track_int=\count292
-\l__pdf_internal_box=\box56
-\g__pdf_backend_object_int=\count293
-\g__pdf_backend_annotation_int=\count294
-\g__pdf_backend_link_int=\count295
+) (listings.sty
+\lst@mode=\count289
+\lst@gtempboxa=\box56
+\lst@token=\toks32
+\lst@length=\count290
+\lst@currlwidth=\dimen176
+\lst@column=\count291
+\lst@pos=\count292
+\lst@lostspace=\dimen177
+\lst@width=\dimen178
+\lst@newlines=\count293
+\lst@lineno=\count294
+\lst@maxwidth=\dimen179
+ (lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count295
+\lst@skipnumbers=\count296
+\lst@framebox=\box57
 )
-No file paper.aux.
+(listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (algorithm.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+ (ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks33
+\c@algorithm=\count297
+) (algpseudocode.sty
+Package: algpseudocode 
+
+(algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count298
+\c@ALG@rem=\count299
+\c@ALG@nested=\count300
+\ALG@tlm=\skip57
+\ALG@thistlm=\skip58
+\c@ALG@Lnr=\count301
+\c@ALG@blocknr=\count302
+\c@ALG@storecount=\count303
+\c@ALG@tmpcounter=\count304
+\ALG@tmplength=\skip59
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (subcaption.sty
+Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
+ (caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+ (caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen180
+\captionmargin=\dimen181
+\caption@leftmargin=\dimen182
+\caption@rightmargin=\dimen183
+\caption@width=\dimen184
+\caption@indent=\dimen185
+\caption@parindent=\dimen186
+\caption@hangindent=\dimen187
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count305
+\c@continuedfloat=\count306
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count307
+\c@subtable=\count308
+) (siunitx.sty
+Package: siunitx 2022-02-15 v3.0.49 A comprehensive (SI) units package
+\l__siunitx_angle_tmp_dim=\dimen188
+\l__siunitx_angle_marker_box=\box58
+\l__siunitx_angle_unit_box=\box59
+\l__siunitx_compound_count_int=\count309
+ (translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+
+(etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count310
+))
+\l__siunitx_number_exponent_fixed_int=\count311
+\l__siunitx_number_min_decimal_int=\count312
+\l__siunitx_number_min_integer_int=\count313
+\l__siunitx_number_round_precision_int=\count314
+\l__siunitx_number_group_minimum_int=\count315
+\l__siunitx_table_tmp_box=\box60
+\l__siunitx_table_tmp_dim=\dimen189
+\l__siunitx_table_column_width_dim=\dimen190
+\l__siunitx_table_integer_box=\box61
+\l__siunitx_table_decimal_box=\box62
+\l__siunitx_table_before_box=\box63
+\l__siunitx_table_after_box=\box64
+\l__siunitx_table_before_dim=\dimen191
+\l__siunitx_table_carry_dim=\dimen192
+\l__siunitx_unit_tmp_int=\count316
+\l__siunitx_unit_position_int=\count317
+\l__siunitx_unit_total_int=\count318
+ (l3keys2e.sty (expl3.sty
+Package: expl3 2022-02-24 L3 programming layer (loader) 
+ (l3backend-xetex.def
+File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
+\c__kernel_sys_dvipdfmx_version_int=\count319
+\l__color_backend_stack_int=\count320
+\g__color_backend_stack_int=\count321
+\g__graphics_track_int=\count322
+\l__pdf_internal_box=\box65
+\g__pdf_backend_object_int=\count323
+\g__pdf_backend_annotation_int=\count324
+\g__pdf_backend_link_int=\count325
+))
+Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
+) (array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen193
+\ar@mcellbox=\box66
+\extrarowheight=\dimen194
+\NC@list=\toks34
+\extratabsurround=\skip60
+\backup@length=\skip61
+\ar@cellbox=\box67
+))
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 23.
+
+(paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-8.
-(ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
+3.
+ (ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -363,7 +485,7 @@ LaTeX Font Info:    ... okay on input line 18.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 18.
+Package hyperref Info: Link coloring OFF on input line 23.
 (nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (refcount.sty
@@ -371,174 +493,231 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count296
+\c@section@level=\count326
 )
-LaTeX Info: Redefining \ref on input line 18.
-LaTeX Info: Redefining \pageref on input line 18.
-LaTeX Info: Redefining \nameref on input line 18.
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
+ (paper.out) (paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
 
+\c@lstlisting=\count327
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 
+(translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
 
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
-
-(umsa.fd
+ (umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
 
  (umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Citation `brown2020language' on page 1 undefined on input line 3
-0.
-
-
-LaTeX Warning: Citation `openai2023gpt4' on page 1 undefined on input line 30.
-
-
-LaTeX Warning: Citation `askell2020deep' on page 1 undefined on input line 30.
-
-
-LaTeX Warning: Citation `ouyang2022training' on page 1 undefined on input line 
-30.
-
-
-LaTeX Warning: Citation `christiano2017deep' on page 1 undefined on input line 
-32.
-
-
-LaTeX Warning: Citation `rafailov2024direct' on page 1 undefined on input line 
-32.
-
-
-LaTeX Warning: Citation `rafailov2024direct' on page 1 undefined on input line 
-34.
-
-
-LaTeX Warning: Citation `hong2024orpo' on page 1 undefined on input line 34.
+Overfull \hbox (7.30577pt too wide) in paragraph at lines 37--38
+\TU/lmr/m/n/10.95 Models fine-tuned solely through SFT, such as \TU/lmtt/m/n/10
+.95 alignment-handbook__zephyr-7b-sft-full\TU/lmr/m/n/10.95 , achieve
+ []
 
 [1
 
 ]
-Overfull \hbox (48.71649pt too wide) in paragraph at lines 38--39
-[]\TU/lmr/m/n/10.95 Establishment of a robust baseline alignment performance fo
-r the \TU/lmtt/m/n/10.95 HuggingFaceH4/zephyr-7b-sft-full
+Overfull \hbox (17.35567pt too wide) in paragraph at lines 46--47
+\TU/lmr/m/n/10.95 thereby surpassing the reported performance of the \TU/lmtt/m
+/n/10.95 alignment-handbook__zephyr-7b-sft-full
  []
 
 
-Overfull \hbox (0.80785pt too wide) in paragraph at lines 39--40
-[]\TU/lmr/m/n/10.95 A systematic investigation into applying Direct Preference 
-Optimization (DPO) to the Zephyr-
- []
+LaTeX Warning: Citation `hallucination_survey' on page 2 undefined on input lin
+e 54.
 
 
-LaTeX Warning: Citation `wei2021finetuned' on page 2 undefined on input line 50
-.
+LaTeX Warning: Citation `zhao2024hallucination' on page 2 undefined on input li
+ne 54.
 
 
-LaTeX Warning: Citation `chung2022scaling' on page 2 undefined on input line 50
-.
+LaTeX Warning: Citation `truthfulqa' on page 2 undefined on input line 54.
 
 
-LaTeX Warning: Citation `ouyang2022training' on page 2 undefined on input line 
-50.
+LaTeX Warning: Citation `factscore' on page 2 undefined on input line 54.
 
 
-LaTeX Warning: Citation `touvron2023llama' on page 2 undefined on input line 50
-.
-
-
-LaTeX Warning: Citation `christiano2017deep' on page 2 undefined on input line 
-52.
-
-
-LaTeX Warning: Citation `stiennon2020learning' on page 2 undefined on input lin
-e 52.
-
-
-LaTeX Warning: Citation `schulman2017proximal' on page 2 undefined on input lin
-e 52.
+LaTeX Warning: Citation `helm' on page 2 undefined on input line 54.
 
 [2]
 
-LaTeX Warning: Citation `rafailov2023direct' on page 3 undefined on input line 
-55.
+LaTeX Warning: Citation `instructgpt' on page 3 undefined on input line 57.
 
 
-LaTeX Warning: Citation `rafailov2023direct' on page 3 undefined on input line 
-55.
+LaTeX Warning: Citation `alpaca' on page 3 undefined on input line 57.
 
 
-LaTeX Warning: Citation `touvron2023llama' on page 3 undefined on input line 55
+LaTeX Warning: Citation `vicuna' on page 3 undefined on input line 57.
+
+
+LaTeX Warning: Citation `llama2' on page 3 undefined on input line 57.
+
+
+LaTeX Warning: Citation `oasst1' on page 3 undefined on input line 57.
+
+
+LaTeX Warning: Citation `dolly' on page 3 undefined on input line 57.
+
+
+LaTeX Warning: Citation `rlhf_openai' on page 3 undefined on input line 60.
+
+
+LaTeX Warning: Citation `instructgpt' on page 3 undefined on input line 60.
+
+
+LaTeX Warning: Citation `sparrow' on page 3 undefined on input line 60.
+
+
+LaTeX Warning: Citation `dpo' on page 3 undefined on input line 60.
+
+
+LaTeX Warning: Citation `dpo_applications' on page 3 undefined on input line 60
 .
 
 
-LaTeX Warning: Citation `azar2023general' on page 3 undefined on input line 55.
-
-
-
-LaTeX Warning: Citation `ethayarajh2024kto' on page 3 undefined on input line 5
-5.
-
-
-LaTeX Warning: Citation `hong2024orpo' on page 3 undefined on input line 60.
-
-
-LaTeX Warning: Citation `hong2024orpo' on page 3 undefined on input line 60.
-
-
-LaTeX Warning: Citation `gulcehre2023empirical' on page 3 undefined on input li
-ne 60.
+LaTeX Warning: Citation `alignment_handbook' on page 3 undefined on input line 
+60.
 
 [3]
 
-LaTeX Warning: Citation `zheng2023judging' on page 4 undefined on input line 65
+LaTeX Warning: Reference `fig:overall_architecture' on page 4 undefined on inpu
+t line 68.
+
+
+LaTeX Warning: Citation `mistral_paper' on page 4 undefined on input line 71.
+
+
+LaTeX Warning: Citation `eval_harness_paper' on page 4 undefined on input line 
+73.
+
+
+LaTeX Warning: Citation `truthfulqa_paper' on page 4 undefined on input line 73
 .
 
 
-LaTeX Warning: Citation `wang2023judging' on page 4 undefined on input line 65.
-
-
-
-LaTeX Warning: Citation `li2023alpacaform' on page 4 undefined on input line 65
-.
-
-
-LaTeX Warning: Citation `liu2023geval' on page 4 undefined on input line 65.
-
-
-LaTeX Warning: Citation `kim2023prometheus' on page 4 undefined on input line 6
-5.
-
-[4]
-Overfull \hbox (104.06688pt too wide) in paragraph at lines 81--82
-[]\TU/lmr/bx/n/10.95 Baseline Model\TU/lmr/m/n/10.95 : We establish our initial
- performance benchmark using the \TU/lmtt/m/n/10.95 HuggingFaceH4/zephyr-7b-sft
--full
+Overfull \hbox (65.18408pt too wide) in paragraph at lines 76--77
+\TU/lmr/m/n/10.95 The first alignment intervention involves Supervised Fine-Tun
+ing (SFT) of the base \TU/lmtt/m/n/10.95 mistralai/Mistral-7B-v0.1
  []
 
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 99.
+
+Overfull \hbox (125.39055pt too wide) in paragraph at lines 79--80
+\TU/lmr/m/n/10.95 For SFT, we utilize a high-quality, diverse instruction-follo
+wing dataset derived from \TU/lmtt/m/n/10.95 alignment-handbook/data/sft-mix-7k
+\TU/lmr/m/n/10.95 .
+ []
+
+[4]
+
+LaTeX Warning: Citation `qlora_paper' on page 5 undefined on input line 82.
+
+
+Overfull \hbox (106.56953pt too wide) in paragraph at lines 96--97
+[]\TU/lmr/bx/n/10.95 Quantization: \TU/lmr/m/n/10.95 4-bit QLoRA with \TU/lmtt/
+m/n/10.95 bnb_4bit_quant_type='nf4' \TU/lmr/m/n/10.95 and \TU/lmtt/m/n/10.95 bn
+b_4bit_compute_dtype=torch.bfloat16\TU/lmr/m/n/10.95 . 
+ []
+
+
+Overfull \hbox (27.25778pt too wide) in paragraph at lines 97--98
+[]\TU/lmr/bx/n/10.95 LoRA Configuration: \TU/lmtt/m/n/10.95 r=64\TU/lmr/m/n/10.
+95 , \TU/lmtt/m/n/10.95 lora_alpha=16\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 lor
+a_dropout=0.1\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 target_modules=['q_proj',
+ []
+
+
+Overfull \hbox (3.31772pt too wide) in paragraph at lines 97--98
+\TU/lmtt/m/n/10.95 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'up_proj', 'down_
+proj', 'lm_head']\TU/lmr/m/n/10.95 . 
+ []
+
+
+LaTeX Warning: Citation `dpo_paper' on page 5 undefined on input line 103.
+
 [5]
+Overfull \hbox (106.56953pt too wide) in paragraph at lines 124--125
+[]\TU/lmr/bx/n/10.95 Quantization: \TU/lmr/m/n/10.95 4-bit QLoRA with \TU/lmtt/
+m/n/10.95 bnb_4bit_quant_type='nf4' \TU/lmr/m/n/10.95 and \TU/lmtt/m/n/10.95 bn
+b_4bit_compute_dtype=torch.bfloat16\TU/lmr/m/n/10.95 . 
+ []
 
-LaTeX Warning: Reference `tab:datasets' on page 6 undefined on input line 102.
+
+Overfull \hbox (27.25778pt too wide) in paragraph at lines 125--126
+[]\TU/lmr/bx/n/10.95 LoRA Configuration: \TU/lmtt/m/n/10.95 r=64\TU/lmr/m/n/10.
+95 , \TU/lmtt/m/n/10.95 lora_alpha=16\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 lor
+a_dropout=0.1\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 target_modules=['q_proj',
+ []
 
 
-LaTeX Warning: Reference `fig:judge_prompt' on page 6 undefined on input line 1
-19.
+Overfull \hbox (3.31772pt too wide) in paragraph at lines 125--126
+\TU/lmtt/m/n/10.95 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'up_proj', 'down_
+proj', 'lm_head']\TU/lmr/m/n/10.95 . 
+ []
 
 
-! LaTeX Error: Environment lstlisting undefined.
+LaTeX Warning: Reference `alg:training_process' on page 6 undefined on input li
+ne 128.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.120 \begin{lstlisting}
-                        [language=bash, caption=Example LLM-as-a-Judge Promp...
-Output written on paper.xdv (5 pages, 167236 bytes).
+
+LaTeX Warning: Citation `[CITE]' on page 6 undefined on input line 136.
+
+
+LaTeX Warning: Citation `[CITE]' on page 6 undefined on input line 136.
+
+
+LaTeX Warning: Citation `[CITE]' on page 6 undefined on input line 136.
+
+
+LaTeX Warning: Citation `[CITE]' on page 6 undefined on input line 136.
+
+[6]
+
+LaTeX Warning: Citation `[CITE]' on page 7 undefined on input line 138.
+
+
+LaTeX Warning: Citation `[CITE]' on page 7 undefined on input line 141.
+
+
+LaTeX Warning: Citation `[CITE]' on page 7 undefined on input line 141.
+
+
+Overfull \hbox (41.23434pt too wide) in paragraph at lines 141--142
+\TU/lmr/m/n/10.95 methods. The second baseline was an internal, unaligned found
+ational model: \TU/lmtt/m/n/10.95 mistralai/Mistral-7B-v0.1
+ []
+
+
+LaTeX Warning: Citation `[CITE]' on page 7 undefined on input line 144.
+
+
+LaTeX Warning: Citation `[CITE]' on page 7 undefined on input line 144.
+
+
+LaTeX Warning: Citation `[CITE]' on page 7 undefined on input line 144.
+
+[7]
+Overfull \hbox (27.61337pt too wide) in paragraph at lines 162--175
+ [][] 
+ []
+
+[8] [9] [10] [11] [12] (paper.aux)
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `paper.out' has not changed.
+(rerunfilecheck)             Checksum: 378523E2A8644C114078E32692489B7A;5088.
+ )
+Output written on paper.xdv (12 pages, 362940 bytes).
