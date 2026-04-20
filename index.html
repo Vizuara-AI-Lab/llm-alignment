@@ -3,362 +3,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LLM Alignment Research</title>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>LLM Alignment | RPA Framework</title>
+
+    <!-- Google Fonts: Figtree -->
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        /* Global Variables & Resets */
+        /* Basic Reset & Global Styles */
         :root {
-            --primary-dark: #0f172a; /* Dark navy/slate */
-            --secondary-dark: #1e293b; /* Slightly lighter dark */
-            --accent-indigo: #6366f1; /* Indigo */
-            --text-light: #f8fafc; /* Near white for dark backgrounds */
-            --text-dark: #334155; /* Dark slate for body text */
-            --card-bg: #ffffff; /* White for cards */
-            --body-bg: #f1f5f9; /* Light subtle background for body */
-            --border-light: #e2e8f0; /* Light border/separator */
-            --shadow-md: rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05);
-            --shadow-lg: rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.1);
+            --font-primary: 'Figtree', sans-serif;
+            --color-header-dark: #0f172a;
+            --color-header-light: #1e293b; /* Slightly lighter for gradient */
+            --color-text-light: #f1f5f9;
+            --color-text-dark: #333;
+            --color-text-muted: #64748b;
+            --color-background-white: #ffffff;
+            --color-background-light-gray: #f8fafc;
+            --color-accent-indigo: #6366f1;
+            --color-accent-indigo-hover: #4f46e5;
+            --color-border: #e2e8f0;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --card-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.12);
+            --border-radius-lg: 12px;
+            --border-radius-md: 8px;
         }
 
-        body {
-            font-family: 'Figtree', sans-serif;
+        *, *::before, *::after {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--body-bg);
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            margin-top: 0;
-            color: var(--primary-dark);
-            line-height: 1.2;
-        }
-
-        p {
-            margin-bottom: 1em;
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--color-text-dark);
+            background-color: var(--color-background-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         a {
-            color: var(--accent-indigo);
+            color: var(--color-accent-indigo);
             text-decoration: none;
             transition: color 0.3s ease;
             cursor: pointer;
         }
 
         a:hover {
-            color: #4f46e5; /* Slightly darker indigo */
+            color: var(--color-accent-indigo-hover);
         }
 
-        /* Utility Container */
+        /* Utility classes */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 0 20px;
         }
 
-        /* Header Section */
-        header {
-            background-image: linear-gradient(to right, var(--primary-dark), var(--secondary-dark));
-            color: var(--text-light);
-            padding: 5rem 1.5rem;
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-header-dark);
             text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--color-accent-indigo);
+            border-radius: 2px;
+        }
+
+        .card {
+            background-color: var(--color-background-white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            border-radius: 10px; /* Specific requirement for interactive elements */
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            border: none;
+            min-width: 180px;
+        }
+
+        .button-primary {
+            background-color: var(--color-accent-indigo);
+            color: var(--color-text-light);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .button-primary:hover {
+            background-color: var(--color-accent-indigo-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--color-header-dark) 0%, var(--color-header-light) 100%);
+            color: var(--color-text-light);
+            padding: 80px 0 60px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
         }
 
         header h1 {
-            font-size: clamp(2.5rem, 6vw, 4.8rem); /* Responsive font size */
-            margin-bottom: 0.75rem;
-            font-weight: 700;
-            color: var(--text-light);
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            letter-spacing: -1px;
         }
 
         header p {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            margin-top: 0;
+            font-size: 1.4rem;
+            font-weight: 400;
             opacity: 0.9;
         }
 
         /* Navigation Bar */
         nav {
-            background-color: var(--card-bg);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            background-color: var(--color-background-white);
+            border-bottom: 1px solid var(--color-border);
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
         }
 
         nav .nav-list {
             list-style: none;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Allow wrapping on small screens */
+            gap: 40px;
         }
 
-        nav .nav-list li a {
-            display: block;
-            padding: 1rem 1.5rem;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            cursor: pointer;
-            border-radius: 4px; /* Subtle rounding for active state */
-        }
-
-        nav .nav-list li a:hover,
-        nav .nav-list li a.active {
-            background-color: var(--accent-indigo);
-            color: var(--text-light);
-        }
-
-        /* Section Styling */
-        section {
-            padding: 4rem 1.5rem;
-            margin-bottom: 2rem;
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 8px 30px var(--shadow-md);
-        }
-        
-        /* Visually separate sections slightly, making them like larger cards */
-        main > section + section {
-            margin-top: 4rem; /* More space between sections */
-        }
-
-        section h2 {
-            text-align: center;
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 2.5rem;
+        nav .nav-item a {
             font-weight: 600;
-            color: var(--primary-dark);
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            padding: 5px 0;
             position: relative;
+            transition: color 0.3s ease;
         }
 
-        section h2::after {
+        nav .nav-item a::after {
             content: '';
-            display: block;
-            width: 70px;
-            height: 4px;
-            background-color: var(--accent-indigo);
-            margin: 12px auto 0;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 3px;
+            background-color: var(--color-accent-indigo);
+            transition: width 0.3s ease;
             border-radius: 2px;
         }
 
-        /* Card styles */
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 2.5rem;
-            box-shadow: 0 6px 20px var(--shadow-md);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%; /* Ensure cards in a grid have equal height */
-            border: 1px solid var(--border-light); /* Subtle border for definition */
+        nav .nav-item a:hover {
+            color: var(--color-accent-indigo);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px var(--shadow-lg);
+        nav .nav-item a:hover::after,
+        nav .nav-item a.active::after { /* Active state not implemented in JS but good for future */
+            width: 100%;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-of-type(odd) {
+            background-color: var(--color-background-light-gray);
         }
 
         /* Abstract Section */
-        #abstract .card {
+        #abstract .abstract-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--color-text-dark);
             max-width: 900px;
             margin: 0 auto;
-            line-height: 1.8;
-            font-size: 1.1rem;
+        }
+        #abstract .abstract-content p {
+            margin-bottom: 1.2em;
+        }
+        #abstract .abstract-content strong {
+            color: var(--color-accent-indigo);
         }
 
         /* Key Results Section */
-        .results-grid {
+        #results .results-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .results-grid .card {
+        #results .result-card {
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 40px 25px;
+            background: linear-gradient(145deg, var(--color-background-white) 0%, #fefefe 100%);
+            border: 1px solid var(--color-border);
         }
 
-        .results-grid .card h3 {
-            color: var(--accent-indigo);
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
+        #results .result-card h3 {
+            font-size: 1.8rem;
+            color: var(--color-accent-indigo);
+            margin-bottom: 15px;
             font-weight: 700;
         }
 
-        .results-grid .card p {
-            font-size: 1.15rem;
-            color: var(--text-dark);
-            margin: 0;
+        #results .result-card p {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
         }
-
-        /* Authors Section */
-        .authors-grid {
+        #results .figure-placeholder {
+            min-height: 200px;
+            background-color: #e0e7ff;
+            border: 2px dashed var(--color-accent-indigo);
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-
-        .authors-grid .card {
-            width: 100%;
-            max-width: 380px; /* Limit card width for author info */
-            text-align: center;
-            display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            cursor: default; /* Author card is for display, not interaction */
+            color: var(--color-accent-indigo);
+            font-weight: 600;
+            font-size: 1.2rem;
+            border-radius: var(--border-radius-lg);
+            margin-top: 20px;
+        }
+        #results .figures-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
         }
 
-        .authors-grid .card:hover {
-            transform: none; /* No lift effect for static author cards */
-            box-shadow: 0 6px 20px var(--shadow-md); /* Keep original shadow */
+
+        /* Authors Section */
+        #authors .authors-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .authors-grid .card h3 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-dark);
-            font-size: 1.9rem;
+        #authors .author-card {
+            text-align: center;
+            max-width: 350px;
+            min-width: 280px;
+            flex: 1;
+            padding: 30px;
         }
 
-        .authors-grid .card p {
-            color: var(--text-dark);
-            font-size: 1.1rem;
+        #authors .author-card h3 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--color-header-dark);
         }
 
-        .authors-grid .card a {
-            font-weight: 500;
+        #authors .author-card p {
+            color: var(--color-accent-indigo);
+            font-size: 1rem;
         }
 
         /* Links Section */
-        .link-buttons {
+        #links .links-buttons {
             display: flex;
-            flex-direction: row;
-            gap: 1.5rem;
-            justify-content: center;
-            align-items: center;
-            margin-top: 2rem;
             flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
             justify-content: center;
-            padding: 1.1rem 2.8rem;
-            background-color: var(--accent-indigo);
-            color: var(--text-light);
-            border-radius: 10px; /* Required border-radius for interactive elements */
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.15rem;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3);
-            border: none;
-            min-width: 220px; /* Ensure buttons have a minimum width */
-        }
-
-        .btn:hover {
-            background-color: #4f46e5; /* Darker indigo on hover */
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
-        }
-
-        .btn svg {
-            margin-right: 0.75rem;
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
+            gap: 30px;
+            margin-top: 50px;
         }
 
         /* Footer */
         footer {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
+            background-color: var(--color-header-dark);
+            color: var(--color-text-light);
             text-align: center;
-            padding: 2.5rem 1rem;
+            padding: 40px 0;
             font-size: 0.95rem;
-            margin-top: 4rem;
         }
 
-        footer p {
-            margin: 0;
-            opacity: 0.8;
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            header h1 {
+                font-size: 3rem;
+            }
+            header p {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            #abstract .abstract-content {
+                font-size: 1.05rem;
+            }
         }
 
-        /* Responsive Adjustments */
         @media (max-width: 768px) {
             header {
-                padding: 4rem 1rem;
+                padding: 60px 0 40px;
             }
-
-            .container {
-                padding: 1.5rem 1rem;
+            header h1 {
+                font-size: 2.5rem;
             }
-
+            header p {
+                font-size: 1rem;
+            }
             nav .nav-list {
+                gap: 20px;
+            }
+            nav .nav-item a {
+                font-size: 0.95rem;
+            }
+            section {
+                padding: 60px 0;
+            }
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+            #results .results-grid,
+            #results .figures-container {
+                grid-template-columns: 1fr;
+            }
+            #authors .authors-grid {
                 flex-direction: column;
                 align-items: center;
             }
-
-            nav .nav-list li a {
-                padding: 0.8rem 1rem;
+            #authors .author-card {
                 width: 100%;
-                text-align: center;
-                border-bottom: 1px solid var(--border-light);
-                border-radius: 0; /* Remove rounding for full-width items */
+                max-width: 400px;
             }
-
-            nav .nav-list li:last-child a {
-                border-bottom: none;
+            .button {
+                padding: 12px 25px;
+                font-size: 1rem;
+                min-width: unset;
+                width: 100%;
+                max-width: 250px;
             }
-
-            section {
-                padding: 3rem 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            main > section + section {
-                margin-top: 2.5rem;
-            }
-
-            .results-grid {
-                grid-template-columns: 1fr; /* Single column on small screens */
-                gap: 1.5rem;
-            }
-
-            .authors-grid {
-                gap: 1.5rem;
-            }
-
-            .link-buttons {
+            #links .links-buttons {
                 flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 320px; /* Constrain button width on mobile */
-                padding: 1rem 2rem;
+                align-items: center;
             }
         }
 
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .results-grid {
-                grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
             }
-            .link-buttons {
-                flex-direction: row; /* Ensure buttons remain in a row if enough space */
+            header p {
+                font-size: 0.9rem;
+            }
+            nav .nav-list {
+                flex-wrap: wrap;
+                gap: 15px 10px;
+                padding: 0 10px;
+            }
+            nav .nav-item a {
+                font-size: 0.9rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .card {
+                padding: 20px;
+            }
+            #abstract .abstract-content {
+                font-size: 1rem;
+            }
+            #results .result-card h3 {
+                font-size: 1.5rem;
+            }
+            #results .result-card p {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -366,127 +418,124 @@
 <body>
     <header>
         <div class="container">
-            <h1>LLM Alignment: Adaptive Self-Correction with Dynamic Value Distillation</h1>
-            <p>Vikash (vikash@gmail.com)</p>
+            <h1>Reinforced Policy Alignment (RPA) Framework</h1>
+            <p>A Novel Approach for Enhancing LLM Safety and Reliability</p>
+            <p><strong>Vikash</strong></p>
         </div>
     </header>
 
     <nav>
         <div class="container">
             <ul class="nav-list">
-                <li><a href="#abstract">Abstract</a></li>
-                <li><a href="#results">Results</a></li>
-                <li><a href="#authors">Authors</a></li>
-                <li><a href="#links">Links</a></li>
+                <li class="nav-item"><a href="#abstract">Abstract</a></li>
+                <li class="nav-item"><a href="#results">Results</a></li>
+                <li class="nav-item"><a href="#authors">Authors</a></li>
+                <li class="nav-item"><a href="#links">Links</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="container">
+    <main>
         <section id="abstract">
-            <h2>Abstract</h2>
-            <div class="card">
-                <p>The proliferation of Large Language Models (LLMs) has unveiled their immense potential across diverse applications, yet consistently aligning their outputs with human values, safety guidelines, and intended objectives remains a critical challenge. Existing alignment strategies often struggle with scalability, generalizability, and the nuanced interpretation of complex ethical directives, leading to persistent issues such as hallucination, bias amplification, and the generation of harmful content. To address these limitations, we propose a novel adaptive alignment framework that seamlessly integrates self-correction mechanisms with dynamic value distillation from a lightweight, context-aware preference model. Our approach enables LLMs to autonomously refine their behavior based on real-time feedback and adapt to evolving ethical landscapes without extensive re-training. Preliminary evaluations demonstrate that our framework significantly reduces the incidence of toxic and biased outputs by over <strong>X%</strong>, simultaneously enhancing factual consistency by an average of <strong>Y%</strong> across benchmark datasets compared to state-of-the-art methods. Furthermore, the model exhibits a <strong>Z</strong> improvement in adherence to predefined safety protocols in adversarial scenarios. These results underscore the potential for more robust, trustworthy, and context-sensitive LLM deployment, paving the way for safer and more responsible AI systems that can operate reliably in complex real-world environments. This work represents a crucial step towards the practical realization of truly aligned artificial intelligence.</p>
+            <div class="container">
+                <h2 class="section-title">Abstract</h2>
+                <div class="card abstract-content">
+                    <p>Large Language Models (LLMs) have demonstrated extraordinary capabilities across various natural language tasks, yet their widespread deployment is often hindered by critical alignment challenges, including the generation of biased, toxic, or factually incorrect content. Ensuring that LLMs adhere to human values and safety guidelines remains a paramount concern, as existing alignment methodologies frequently struggle with scalability, robustness, and interpretability across diverse, complex scenarios. This paper introduces the <strong>Reinforced Policy Alignment (RPA) framework</strong>, a novel approach designed to enhance the safety and reliability of LLMs by iteratively refining their behavior through a dynamic reward signal. Our method leverages a self-reflective preference generation module to create high-quality synthetic feedback, which then trains a robust reward model. This reward model subsequently guides the LLM fine-tuning process via Proximal Policy Optimization (PPO), encouraging outputs that are both helpful and harmless. Preliminary experiments indicate that RPA substantially improves model alignment, significantly reducing the generation of undesirable content compared to conventional Supervised Fine-Tuning (SFT) and standard Reinforcement Learning from Human Feedback (RLHF) approaches on a suite of alignment benchmarks. Specifically, initial evaluations demonstrate reductions in harmful output rates by approximately 45\% and improvements in factual consistency by up to 30\%. These findings suggest that RPA offers a promising direction for developing more trustworthy and ethically sound LLMs, contributing to their responsible integration into high-stakes applications and fostering greater public confidence in AI technologies.</p>
+                </div>
             </div>
         </section>
 
         <section id="results">
-            <h2>Key Results</h2>
-            <div class="results-grid">
-                <div class="card">
-                    <h3>Reduced Toxicity & Bias</h3>
-                    <p>Incidence of toxic and biased outputs reduced by over <strong>X%</strong>.</p>
+            <div class="container">
+                <h2 class="section-title">Key Results</h2>
+                <div class="results-grid">
+                    <div class="card result-card">
+                        <h3>45% Reduction</h3>
+                        <p>in harmful output rates compared to conventional SFT and standard RLHF approaches.</p>
+                    </div>
+                    <div class="card result-card">
+                        <h3>30% Improvement</h3>
+                        <p>in factual consistency, enhancing the trustworthiness of generated content.</p>
+                    </div>
+                    <div class="card result-card">
+                        <h3>Novel RPA Framework</h3>
+                        <p>Achieves superior model alignment through a self-reflective preference generation module and dynamic reward signals.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Enhanced Factual Consistency</h3>
-                    <p>Improved factual consistency by an average of <strong>Y%</strong> across benchmark datasets.</p>
+
+                <h2 class="section-title" style="margin-top: 80px;">Figures & Visualizations</h2>
+                <div class="figures-container">
+                    <div class="card figure-placeholder">
+                        Figure 1: RPA Framework Overview
+                    </div>
+                    <div class="card figure-placeholder">
+                        Figure 2: Harmful Output Reduction
+                    </div>
+                    <div class="card figure-placeholder">
+                        Figure 3: Factual Consistency Metrics
+                    </div>
+                    <div class="card figure-placeholder">
+                        Figure 4: Ablation Studies
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Safety Protocol Adherence</h3>
-                    <p>Exhibits a <strong>Z</strong> improvement in adherence to safety protocols in adversarial scenarios.</p>
-                </div>
+                <p style="text-align: center; margin-top: 40px; font-size: 1.1rem; color: var(--color-text-muted);">
+                    See the <a href="https://github.com/Vizuara-AI-Lab/llm-alignment/raw/main/paper.pdf" target="_blank" rel="noopener noreferrer">full paper</a> for detailed experimental results and analysis.
+                </p>
             </div>
         </section>
 
         <section id="authors">
-            <h2>Authors</h2>
-            <div class="authors-grid">
-                <div class="card">
-                    <h3>Vikash</h3>
-                    <p><a href="mailto:vikash@gmail.com">vikash@gmail.com</a></p>
+            <div class="container">
+                <h2 class="section-title">Authors</h2>
+                <div class="authors-grid">
+                    <div class="card author-card">
+                        <h3>Vikash</h3>
+                        <p><a href="mailto:vikash@gmail.com">vikash@gmail.com</a></p>
+                        <p style="margin-top: 15px; color: var(--color-text-dark);">Vizuara Research Team</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="links">
-            <h2>Links</h2>
-            <div class="link-buttons">
-                <a href="https://github.com/Vizuara-AI-Lab/llm-alignment" target="_blank" rel="noopener noreferrer" class="btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387 0.599 0.111 0.793-0.261 0.793-0.577v-2.234c-3.338 0.726-4.033-1.416-4.033-1.416-0.546-1.387-1.333-1.756-1.333-1.756-1.089-0.745 0.083-0.729 0.083-0.729 1.205 0.084 1.838 1.237 1.838 1.237 1.07 1.835 2.809 1.305 3.493 0.998 0.108-0.778 0.418-1.305 0.762-1.604-2.665-0.305-5.467-1.334-5.467-5.931 0-1.311 0.469-2.381 1.236-3.221-0.124-0.303-0.535-1.524 0.117-3.176 0 0 1.008-0.322 3.301 1.231 0.959-0.266 1.989-0.399 3.003-0.399 1.012 0 2.042 0.133 3.003 0.399 2.294-1.553 3.302-1.231 3.302-1.231 0.653 1.653 0.242 2.874 0.118 3.176 0.77 0.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921 0.43 0.372 0.823 1.102 0.823 2.222v3.293c0 0.319 0.192 0.607 0.803 0.57 4.768-1.581 8.203-6.079 8.203-11.389 0-6.627-5.373-12-12-12z"/></svg>
-                    GitHub Repository
-                </a>
-                <a href="https://github.com/Vizuara-AI-Lab/llm-alignment/raw/main/paper.pdf" target="_blank" rel="noopener noreferrer" class="btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
-                    Paper PDF
-                </a>
+            <div class="container">
+                <h2 class="section-title">Links</h2>
+                <div class="links-buttons">
+                    <a href="https://github.com/Vizuara-AI-Lab/llm-alignment" target="_blank" rel="noopener noreferrer" class="button button-primary">
+                        GitHub Repository
+                    </a>
+                    <a href="https://github.com/Vizuara-AI-Lab/llm-alignment/raw/main/paper.pdf" target="_blank" rel="noopener noreferrer" class="button button-primary">
+                        Paper PDF
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="current-year"></span> Vizuara Research Team. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Vizuara Research Team. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Optional: Smooth scroll for older browsers or if CSS scroll-behavior is not preferred
+        // (Modern browsers handle scroll-behavior: smooth in CSS, so this JS is often redundant but included for completeness if required)
+        document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Update current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Optional: Active navigation link highlighting based on scroll position
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav .nav-list li a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            // Determine the currently active section by scroll position
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                // Adjust this offset value to control when the active state changes
-                // Smaller value makes it change earlier, larger later
-                if (pageYOffset >= sectionTop - 150) { 
-                    current = section.getAttribute('id');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - (document.querySelector('nav').offsetHeight), // Adjust for sticky nav height
+                        behavior: 'smooth'
+                    });
                 }
             });
-
-            // Apply 'active' class to the corresponding nav link
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Initialize active link on page load for the first section visible
-        window.addEventListener('load', () => {
-            const firstSection = document.querySelector('section');
-            if (firstSection) {
-                const firstSectionId = firstSection.getAttribute('id');
-                const correspondingNavLink = document.querySelector(`nav .nav-list li a[href="#${firstSectionId}"]`);
-                if (correspondingNavLink) {
-                    correspondingNavLink.classList.add('active');
-                }
-            }
         });
     </script>
 </body>
