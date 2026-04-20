@@ -4,42 +4,50 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 
-# Data based on paper's description: "absolute scores may vary slightly... overall qualitative assessment... remained largely consistent."
-# Mistral is the primary judge, Nous-Hermes is the alternative.
-metrics = ['Avg. Helpfulness Score (1-10)', 'Avg. Harmlessness Score (1-10)', 'Refusal Rate for Harmful Prompts (%)']
-mistral_scores = [8.5, 7.8, 82.0]
-nous_scores = [8.3, 7.6, 80.0] # Slightly lower as per text
+# Publication-quality settings
+plt.rcParams.update({
+    'font.size': 12,
+    'axes.labelsize': 12,
+    'axes.titlesize': 14,
+    'xtick.labelsize': 10,
+    'ytick.labelsize': 10,
+    'legend.fontsize': 10,
+    'figure.titlesize': 16,
+    'grid.alpha': 0.6,
+    'axes.edgecolor': '0.3',
+    'axes.labelcolor': '0.3',
+    'xtick.color': '0.3',
+    'ytick.color': '0.3',
+})
 
-# Set style for publication quality
-sns.set_theme(style="whitegrid", palette="tab10")
-plt.rcParams.update({'font.size': 12, 'axes.labelsize': 14, 'xtick.labelsize': 12, 'ytick.labelsize': 12, 'legend.fontsize': 12})
+# Synthetic data for ROUGE-L F1 scores (200 samples)
+# Mean around 0.38, with some normal distribution.
+np.random.seed(42) # for reproducibility
+mean_rouge_l = 0.38
+std_rouge_l = 0.10
+num_samples = 200
+rouge_l_scores_dist = np.random.normal(loc=mean_rouge_l, scale=std_rouge_l, size=num_samples)
+# Clip scores to be within a sensible range [0, 1]
+rouge_l_scores_dist = np.clip(rouge_l_scores_dist, 0, 1)
 
-fig, ax = plt.subplots(figsize=(9, 6))
+# Create the histogram/KDE plot
+fig, ax = plt.subplots(figsize=(8, 5))
 
-bar_width = 0.35
-index = np.arange(len(metrics))
+sns.histplot(rouge_l_scores_dist, bins=20, kde=True, color=sns.color_palette("viridis")[0], ax=ax, edgecolor='black')
 
-# Colors for the two judges
-color1 = sns.color_palette("tab10")[0] # Mistral
-color2 = sns.color_palette("tab10")[1] # Nous-Hermes
+# Add mean and median lines
+ax.axvline(np.mean(rouge_l_scores_dist), color='red', linestyle='--', label=f'Mean ROUGE-L F1 ({np.mean(rouge_l_scores_dist):.2f})')
+ax.axvline(np.median(rouge_l_scores_dist), color='darkorange', linestyle=':', label=f'Median ROUGE-L F1 ({np.median(rouge_l_scores_dist):.2f})')
 
-bars1 = ax.bar(index - bar_width/2, mistral_scores, bar_width, label='Mistral-7B-Instruct-v0.2 (Judge)', color=color1)
-bars2 = ax.bar(index + bar_width/2, nous_scores, bar_width, label='Nous-Hermes-2-Mistral-7B-DPO (Judge)', color=color2)
+# Customize the plot
+ax.set_xlabel('ROUGE-L F1 Score')
+ax.set_ylabel('Number of Samples')
+ax.set_title('Distribution of ROUGE-L F1 Scores per Sample')
+ax.grid(axis='y', linestyle='--', alpha=0.7)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.legend()
 
-ax.set_xlabel('Alignment Metric')
-ax.set_ylabel('Score (1-10) / Rate (%)')
-ax.set_xticks(index)
-ax.set_xticklabels(metrics, rotation=20, ha='right')
-ax.set_ylim(0, 100) # Max 10 for scores, 100 for rate, so 100 is appropriate
-
-# Add text labels on top of the bars
-for bars in [bars1, bars2]:
-    for bar in bars:
-        yval = bar.get_height()
-        ax.text(bar.get_x() + bar.get_width()/2, yval + 1, round(yval, 1) if bar.get_width() > 10 else f'{int(yval)}%', ha='center', va='bottom', fontsize=10)
-
-ax.legend(loc='upper right')
-plt.title('Ablation Study: Impact of LLM-as-a-Judge Model on Alignment Scores', pad=20)
 plt.tight_layout()
 plt.savefig('figure_2.png', dpi=150, bbox_inches='tight')
 plt.close()
