@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Alignment Research</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Variables & Resets */
+        :root {
+            --primary-dark: #0f172a; /* Dark navy/slate */
+            --secondary-dark: #1e293b; /* Slightly lighter dark */
+            --accent-indigo: #6366f1; /* Indigo */
+            --text-light: #f8fafc; /* Near white for dark backgrounds */
+            --text-dark: #334155; /* Dark slate for body text */
+            --card-bg: #ffffff; /* White for cards */
+            --body-bg: #f1f5f9; /* Light subtle background for body */
+            --border-light: #e2e8f0; /* Light border/separator */
+            --shadow-md: rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05);
+            --shadow-lg: rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Figtree', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--body-bg);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            color: var(--primary-dark);
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: var(--accent-indigo);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: #4f46e5; /* Slightly darker indigo */
+        }
+
+        /* Utility Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Header Section */
+        header {
+            background-image: linear-gradient(to right, var(--primary-dark), var(--secondary-dark));
+            color: var(--text-light);
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: clamp(2.5rem, 6vw, 4.8rem); /* Responsive font size */
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        header p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-top: 0;
+            opacity: 0.9;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        nav .nav-list li a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+            border-radius: 4px; /* Subtle rounding for active state */
+        }
+
+        nav .nav-list li a:hover,
+        nav .nav-list li a.active {
+            background-color: var(--accent-indigo);
+            color: var(--text-light);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 1.5rem;
+            margin-bottom: 2rem;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 8px 30px var(--shadow-md);
+        }
+        
+        /* Visually separate sections slightly, making them like larger cards */
+        main > section + section {
+            margin-top: 4rem; /* More space between sections */
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent-indigo);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Card styles */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 6px 20px var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%; /* Ensure cards in a grid have equal height */
+            border: 1px solid var(--border-light); /* Subtle border for definition */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow-lg);
+        }
+
+        /* Abstract Section */
+        #abstract .card {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Key Results Section */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .results-grid .card {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .results-grid .card h3 {
+            color: var(--accent-indigo);
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .results-grid .card p {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        /* Authors Section */
+        .authors-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .authors-grid .card {
+            width: 100%;
+            max-width: 380px; /* Limit card width for author info */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: default; /* Author card is for display, not interaction */
+        }
+
+        .authors-grid .card:hover {
+            transform: none; /* No lift effect for static author cards */
+            box-shadow: 0 6px 20px var(--shadow-md); /* Keep original shadow */
+        }
+
+        .authors-grid .card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+            font-size: 1.9rem;
+        }
+
+        .authors-grid .card p {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .authors-grid .card a {
+            font-weight: 500;
+        }
+
+        /* Links Section */
+        .link-buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.1rem 2.8rem;
+            background-color: var(--accent-indigo);
+            color: var(--text-light);
+            border-radius: 10px; /* Required border-radius for interactive elements */
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.15rem;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3);
+            border: none;
+            min-width: 220px; /* Ensure buttons have a minimum width */
+        }
+
+        .btn:hover {
+            background-color: #4f46e5; /* Darker indigo on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn svg {
+            margin-right: 0.75rem;
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2.5rem 1rem;
+            font-size: 0.95rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header {
+                padding: 4rem 1rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            nav .nav-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav .nav-list li a {
+                padding: 0.8rem 1rem;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--border-light);
+                border-radius: 0; /* Remove rounding for full-width items */
+            }
+
+            nav .nav-list li:last-child a {
+                border-bottom: none;
+            }
+
+            section {
+                padding: 3rem 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            main > section + section {
+                margin-top: 2.5rem;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr; /* Single column on small screens */
+                gap: 1.5rem;
+            }
+
+            .authors-grid {
+                gap: 1.5rem;
+            }
+
+            .link-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px; /* Constrain button width on mobile */
+                padding: 1rem 2rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+            }
+            .link-buttons {
+                flex-direction: row; /* Ensure buttons remain in a row if enough space */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>LLM Alignment: Adaptive Self-Correction with Dynamic Value Distillation</h1>
+            <p>Vikash (vikash@gmail.com)</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#abstract">Abstract</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#authors">Authors</a></li>
+                <li><a href="#links">Links</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="abstract">
+            <h2>Abstract</h2>
+            <div class="card">
+                <p>The proliferation of Large Language Models (LLMs) has unveiled their immense potential across diverse applications, yet consistently aligning their outputs with human values, safety guidelines, and intended objectives remains a critical challenge. Existing alignment strategies often struggle with scalability, generalizability, and the nuanced interpretation of complex ethical directives, leading to persistent issues such as hallucination, bias amplification, and the generation of harmful content. To address these limitations, we propose a novel adaptive alignment framework that seamlessly integrates self-correction mechanisms with dynamic value distillation from a lightweight, context-aware preference model. Our approach enables LLMs to autonomously refine their behavior based on real-time feedback and adapt to evolving ethical landscapes without extensive re-training. Preliminary evaluations demonstrate that our framework significantly reduces the incidence of toxic and biased outputs by over <strong>X%</strong>, simultaneously enhancing factual consistency by an average of <strong>Y%</strong> across benchmark datasets compared to state-of-the-art methods. Furthermore, the model exhibits a <strong>Z</strong> improvement in adherence to predefined safety protocols in adversarial scenarios. These results underscore the potential for more robust, trustworthy, and context-sensitive LLM deployment, paving the way for safer and more responsible AI systems that can operate reliably in complex real-world environments. This work represents a crucial step towards the practical realization of truly aligned artificial intelligence.</p>
+            </div>
+        </section>
+
+        <section id="results">
+            <h2>Key Results</h2>
+            <div class="results-grid">
+                <div class="card">
+                    <h3>Reduced Toxicity & Bias</h3>
+                    <p>Incidence of toxic and biased outputs reduced by over <strong>X%</strong>.</p>
+                </div>
+                <div class="card">
+                    <h3>Enhanced Factual Consistency</h3>
+                    <p>Improved factual consistency by an average of <strong>Y%</strong> across benchmark datasets.</p>
+                </div>
+                <div class="card">
+                    <h3>Safety Protocol Adherence</h3>
+                    <p>Exhibits a <strong>Z</strong> improvement in adherence to safety protocols in adversarial scenarios.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="authors">
+            <h2>Authors</h2>
+            <div class="authors-grid">
+                <div class="card">
+                    <h3>Vikash</h3>
+                    <p><a href="mailto:vikash@gmail.com">vikash@gmail.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="links">
+            <h2>Links</h2>
+            <div class="link-buttons">
+                <a href="https://github.com/Vizuara-AI-Lab/llm-alignment" target="_blank" rel="noopener noreferrer" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387 0.599 0.111 0.793-0.261 0.793-0.577v-2.234c-3.338 0.726-4.033-1.416-4.033-1.416-0.546-1.387-1.333-1.756-1.333-1.756-1.089-0.745 0.083-0.729 0.083-0.729 1.205 0.084 1.838 1.237 1.838 1.237 1.07 1.835 2.809 1.305 3.493 0.998 0.108-0.778 0.418-1.305 0.762-1.604-2.665-0.305-5.467-1.334-5.467-5.931 0-1.311 0.469-2.381 1.236-3.221-0.124-0.303-0.535-1.524 0.117-3.176 0 0 1.008-0.322 3.301 1.231 0.959-0.266 1.989-0.399 3.003-0.399 1.012 0 2.042 0.133 3.003 0.399 2.294-1.553 3.302-1.231 3.302-1.231 0.653 1.653 0.242 2.874 0.118 3.176 0.77 0.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921 0.43 0.372 0.823 1.102 0.823 2.222v3.293c0 0.319 0.192 0.607 0.803 0.57 4.768-1.581 8.203-6.079 8.203-11.389 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub Repository
+                </a>
+                <a href="https://github.com/Vizuara-AI-Lab/llm-alignment/raw/main/paper.pdf" target="_blank" rel="noopener noreferrer" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
+                    Paper PDF
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Vizuara Research Team. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Optional: Active navigation link highlighting based on scroll position
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav .nav-list li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            // Determine the currently active section by scroll position
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // Adjust this offset value to control when the active state changes
+                // Smaller value makes it change earlier, larger later
+                if (pageYOffset >= sectionTop - 150) { 
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // Apply 'active' class to the corresponding nav link
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Initialize active link on page load for the first section visible
+        window.addEventListener('load', () => {
+            const firstSection = document.querySelector('section');
+            if (firstSection) {
+                const firstSectionId = firstSection.getAttribute('id');
+                const correspondingNavLink = document.querySelector(`nav .nav-list li a[href="#${firstSectionId}"]`);
+                if (correspondingNavLink) {
+                    correspondingNavLink.classList.add('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
