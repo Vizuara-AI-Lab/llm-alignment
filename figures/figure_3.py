@@ -2,37 +2,60 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
 
-# Synthetic/placeholder data based on paper text (e.g., [0.XX], [0.YY], [0.3ZZ] > 0.35)
-rouge_metrics = ['ROUGE-1 F1', 'ROUGE-2 F1', 'ROUGE-L F1']
-scores = [0.45, 0.20, 0.38] # Synthetic values for [0.XX], [0.YY], [0.3ZZ]
+# Publication-quality settings
+plt.rcParams.update({
+    'font.size': 12,
+    'axes.labelsize': 12,
+    'axes.titlesize': 14,
+    'xtick.labelsize': 10,
+    'ytick.labelsize': 10,
+    'legend.fontsize': 10,
+    'figure.titlesize': 16,
+    'grid.alpha': 0.6,
+    'axes.edgecolor': '0.3',
+    'axes.labelcolor': '0.3',
+    'xtick.color': '0.3',
+    'ytick.color': '0.3',
+})
 
-# Target ROUGE-L F1 threshold
-target_rouge_l_threshold = 0.35
+# Synthetic/hypothetical data for ROUGE-L F1 scores
+models = [
+    'Mistral-7B (Base)',
+    'Zephyr-7B-SFT (Baseline)',
+    'SFT-tuned Mistral',
+    'DPO-tuned Mistral'
+]
+# Hypothetical scores demonstrating improvement
+rouge_l_scores_comparison = [0.10, 0.38, 0.42, 0.45] 
+threshold_rouge_l = 0.35
 
-# Plotting
-fig, ax = plt.subplots(figsize=(8, 5))
+# Create the bar chart
+fig, ax = plt.subplots(figsize=(9, 6))
 
-bars = ax.bar(rouge_metrics, scores, color=['skyblue', 'lightcoral', 'mediumseagreen'], width=0.6)
+# Use a colorblind-friendly palette
+colors = sns.color_palette("viridis", len(models))
 
-# Add scores on top of bars
+bars = ax.bar(models, rouge_l_scores_comparison, color=colors)
+
+# Add value labels on top of the bars
 for bar in bars:
     yval = bar.get_height()
-    ax.text(bar.get_x() + bar.get_width()/2, yval + 0.01, round(yval, 2), ha='center', va='bottom', fontsize=11)
+    ax.text(bar.get_x() + bar.get_width()/2, yval + 0.01, f'{yval:.2f}', ha='center', va='bottom', fontsize=10, color='black')
 
-# Add target ROUGE-L threshold line
-ax.axhline(target_rouge_l_threshold, color='grey', linestyle='--', linewidth=1.5,
-           label=f'Target ROUGE-L F1 ({target_rouge_l_threshold})')
+# Add the ROUGE-L threshold line
+ax.axhline(threshold_rouge_l, color='red', linestyle='--', linewidth=1.5, label=f'ROUGE-L Threshold ({threshold_rouge_l:.2f})')
 
-ax.set_ylim(0, max(scores) * 1.2) # Adjust y-axis limit
-ax.set_ylabel('F1 Score', fontsize=12)
-ax.set_title('ROUGE F1 Scores for Zephyr-7B-SFT-Full on dpo-mix-7k Dataset', fontsize=14, pad=15)
-ax.tick_params(axis='x', labelsize=12)
-ax.tick_params(axis='y', labelsize=11)
-ax.spines['right'].set_visible(False)
-ax.spines['top'].set_visible(False)
+# Customize the plot
+ax.set_ylim(0, max(rouge_l_scores_comparison) * 1.2) # Adjust y-axis limit
+ax.set_ylabel('ROUGE-L F1 Score')
+ax.set_title('Comparative ROUGE-L F1 Performance Across Alignment Stages (Hypothetical)')
 ax.grid(axis='y', linestyle='--', alpha=0.7)
-ax.legend(fontsize=10)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.tick_params(axis='x', rotation=15) # Rotate x-axis labels if they overlap
+ax.legend()
 
 plt.tight_layout()
 plt.savefig('figure_3.png', dpi=150, bbox_inches='tight')
