@@ -563,158 +563,107 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-
-LaTeX Warning: Citation `ouyang2022training' on page 1 undefined on input line 
-38.
-
-
-LaTeX Warning: Citation `christiano2017deep' on page 1 undefined on input line 
-38.
-
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+
+
+LaTeX Warning: Citation `[CITE]' on page 1 undefined on input line 37.
+
+
+LaTeX Warning: Citation `[CITE]' on page 1 undefined on input line 37.
+
+
+LaTeX Warning: Citation `[CITE]' on page 1 undefined on input line 39.
+
 [1
 
 ]
-Underfull \hbox (badness 1442) in paragraph at lines 46--47
-[]\TU/lmr/m/n/10.95 We quantitatively assess the helpfulness and instruction-fo
-llowing capabilities of the
+Overfull \hbox (24.58267pt too wide) in paragraph at lines 45--46
+[]\TU/lmr/m/n/10.95 We present a comprehensive baseline evaluation of the \TU/l
+mtt/m/n/10.95 alignment-handbook/zephyr-7b-sft-full
  []
-
-
-Underfull \hbox (badness 2426) in paragraph at lines 46--47
-\TU/lmtt/m/n/10.95 HuggingFaceH4/zephyr-7b-sft-full \TU/lmr/m/n/10.95 model on 
-a diverse set of beneficial prompts,
- []
-
-
-LaTeX Warning: Reference `sec:related_work' on page 2 undefined on input line 5
-2.
-
-
-LaTeX Warning: Reference `sec:methods' on page 2 undefined on input line 52.
-
-
-LaTeX Warning: Reference `sec:results' on page 2 undefined on input line 52.
-
-
-LaTeX Warning: Citation `askell2021alignment' on page 2 undefined on input line
- 57.
-
-
-LaTeX Warning: Citation `wang2018glue' on page 2 undefined on input line 57.
-
-
-LaTeX Warning: Citation `wang2019superglue' on page 2 undefined on input line 5
-7.
-
-
-LaTeX Warning: Citation `zheng2023judging' on page 2 undefined on input line 57
-.
-
-
-LaTeX Warning: Citation `liang2022holistic' on page 2 undefined on input line 5
-7.
-
-
-LaTeX Warning: Citation `dubois2023alpacaeval' on page 2 undefined on input lin
-e 57.
-
-
-LaTeX Warning: Citation `zheng2023judging' on page 2 undefined on input line 60
-.
-
-
-LaTeX Warning: Citation `chiang2023vicuna' on page 2 undefined on input line 60
-.
-
-
-LaTeX Warning: Citation `liang2022holistic' on page 2 undefined on input line 6
-0.
-
-
-LaTeX Warning: Citation `wang2023prompting' on page 2 undefined on input line 6
-0.
-
-
-LaTeX Warning: Citation `perez2022red' on page 2 undefined on input line 60.
 
 
 LaTeX Warning: Citation `ouyang2022training' on page 2 undefined on input line 
-60.
+56.
+
+
+LaTeX Warning: Citation `ouyang2022training' on page 2 undefined on input line 
+56.
+
+
+LaTeX Warning: Citation `bai2022training' on page 2 undefined on input line 59.
+
+
+
+LaTeX Warning: Citation `ouyang2022training' on page 2 undefined on input line 
+59.
+
+
+LaTeX Warning: Citation `schulman2017proximal' on page 2 undefined on input lin
+e 59.
+
+
+LaTeX Warning: Citation `rafailov2023direct' on page 2 undefined on input line 
+59.
+
+
+LaTeX Warning: Citation `tunstall2023zephyr' on page 2 undefined on input line 
+59.
 
 [2]
 
-LaTeX Warning: Citation `ouyang2022training' on page 3 undefined on input line 
-63.
+LaTeX Warning: Citation `bai2022training' on page 3 undefined on input line 62.
 
 
-LaTeX Warning: Citation `christiano2023deep' on page 3 undefined on input line 
-63.
+
+LaTeX Warning: Citation `lin2004rouge' on page 3 undefined on input line 62.
 
 
-LaTeX Warning: Citation `ganguli2023red' on page 3 undefined on input line 63.
-
-
-LaTeX Warning: Citation `bai2022constitutional' on page 3 undefined on input li
-ne 63.
-
-
-LaTeX Warning: Citation `borgeaud2022learning' on page 3 undefined on input lin
-e 63.
-
-
-LaTeX Warning: Citation `touvron2023llama2' on page 3 undefined on input line 6
-6.
-
-
-LaTeX Warning: Citation `jiang2023mistral' on page 3 undefined on input line 66
+LaTeX Warning: Citation `papineni2002bleu' on page 3 undefined on input line 62
 .
 
 
+LaTeX Warning: Citation `wang2023pandalm' on page 3 undefined on input line 62.
+
+
+
+LaTeX Warning: Citation `tunstall2023alignmenthandbook' on page 3 undefined on 
+input line 65.
+
+
 LaTeX Warning: Citation `tunstall2023zephyr' on page 3 undefined on input line 
-66.
+65.
 
-[3]
-Overfull \hbox (19.34956pt too wide) in paragraph at lines 81--82
-\TU/lmr/m/n/10.95 Language Model (LLM) is employed as the judge. Specifically, 
-\TU/lmtt/m/n/10.95 mistralai/Mistral-7B-Instruct-v0.2
- []
+[3] [4] [5] [6]
 
-[4]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 105.
+LaTeX Warning: Citation `CITE' on page 7 undefined on input line 148.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5] [6]
-Overfull \hbox (53.42491pt too wide) in paragraph at lines 157--158
-\TU/lmr/m/n/10.95 ment context referenced \TU/lmtt/m/n/10.95 open-llm-leaderboa
-rd-old/details_alignment-handbook__zephyr-7b-sft-full
- []
+LaTeX Warning: Citation `CITE' on page 7 undefined on input line 151.
 
 [7]
 
-LaTeX Warning: Reference `tab:overall_scores' on page 8 undefined on input line
- 177.
+LaTeX Warning: Citation `CITE' on page 8 undefined on input line 154.
 
 
-LaTeX Warning: Reference `fig:harmful_response_types' on page 8 undefined on in
-put line 179.
+LaTeX Warning: Citation `CITE' on page 8 undefined on input line 163.
 
 
-LaTeX Warning: Reference `tab:judge_ablation' on page 8 undefined on input line
- 185.
+Underfull \hbox (badness 2689) in paragraph at lines 166--167
+\TU/lmr/m/n/10.95 Our initial evaluation established a baseline for aligned res
+ponse generation using the
+ []
 
-[8]
 
-LaTeX Warning: Reference `fig:judge_prompt_ablation' on page 9 undefined on inp
-ut line 188.
+Underfull \hbox (badness 2846) in paragraph at lines 166--167
+\TU/lmtt/m/n/10.95 alignment-handbook/zephyr-7b-sft-full \TU/lmr/m/n/10.95 mode
+l on the held-out test set derived from
+ []
 
-[9] [10]
+[8] [9] [10]
 File: figures/figure_1.png Graphic file (type bmp)
 <figures/figure_1.png>
 File: figures/figure_2.png Graphic file (type bmp)
@@ -726,11 +675,21 @@ File: figures/figure_3.png Graphic file (type bmp)
 ]
 File: figures/figure_4.png Graphic file (type bmp)
 <figures/figure_4.png>
- [12] [13] [14] (paper.aux)
+File: figures/figure_1.png Graphic file (type bmp)
+<figures/figure_1.png>
+ [12]
+File: figures/figure_2.png Graphic file (type bmp)
+<figures/figure_2.png>
+File: figures/figure_3.png Graphic file (type bmp)
+<figures/figure_3.png>
+ [13]
+File: figures/figure_4.png Graphic file (type bmp)
+<figures/figure_4.png>
+ [14] [15] (paper.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 5110F061E52F1D518A8A74CF20877593;4682.
+(rerunfilecheck)             Checksum: 9B1D74929B716F0CC73DC9029D6D81B6;4505.
  )
-Output written on paper.xdv (14 pages, 336840 bytes).
+Output written on paper.xdv (15 pages, 375152 bytes).
