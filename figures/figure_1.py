@@ -2,56 +2,42 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 
-# Publication-quality settings
-plt.rcParams.update({
-    'font.size': 12,
-    'axes.labelsize': 12,
-    'axes.titlesize': 14,
-    'xtick.labelsize': 10,
-    'ytick.labelsize': 10,
-    'legend.fontsize': 10,
-    'figure.titlesize': 16,
-    'grid.alpha': 0.6,
-    'axes.edgecolor': '0.3',
-    'axes.labelcolor': '0.3',
-    'xtick.color': '0.3',
-    'ytick.color': '0.3',
-})
+# Set a consistent style for publication quality
+plt.style.use('seaborn-v0_8-darkgrid')
 
-# Synthetic/placeholder data based on the results summary
-rouge_metrics = ['ROUGE-1 F1', 'ROUGE-2 F1', 'ROUGE-L F1']
-# Placeholder values, ensuring ROUGE-L is above 0.35 threshold
-rouge_scores = [0.45, 0.20, 0.38] 
-threshold_rouge_l = 0.35
+# Data for illustrative loss curves
+epochs = np.arange(1, 4) # 3 epochs as per plan
+train_loss = np.array([1.8, 1.2, 0.9])
+val_loss = np.array([1.6, 1.1, 0.95])
 
-# Create the bar chart
-fig, ax = plt.subplots(figsize=(7, 5))
+# Add some noise for realism, but keep the trend
+np.random.seed(42)
+train_loss = train_loss + np.random.normal(0, 0.05, size=len(epochs))
+val_loss = val_loss + np.random.normal(0, 0.05, size=len(epochs))
 
-# Use a colorblind-friendly palette
-colors = sns.color_palette("viridis", len(rouge_metrics))
+# Ensure loss remains positive and generally decreasing
+train_loss = np.maximum(train_loss, 0.5)
+val_loss = np.maximum(val_loss, 0.5)
 
-bars = ax.bar(rouge_metrics, rouge_scores, color=colors)
 
-# Add value labels on top of the bars
-for bar in bars:
-    yval = bar.get_height()
-    ax.text(bar.get_x() + bar.get_width()/2, yval + 0.01, f'{yval:.2f}', ha='center', va='bottom', fontsize=10, color='black')
+plt.figure(figsize=(8, 5))
 
-# Add the ROUGE-L threshold line
-ax.axhline(threshold_rouge_l, color='red', linestyle='--', linewidth=1.5, label=f'ROUGE-L Threshold ({threshold_rouge_l:.2f})')
+plt.plot(epochs, train_loss, marker='o', linestyle='-', color='#1f77b4', label='Training Loss')
+plt.plot(epochs, val_loss, marker='x', linestyle='--', color='#ff7f0e', label='Validation Loss')
 
-# Customize the plot
-ax.set_ylim(0, max(rouge_scores) * 1.2) # Adjust y-axis limit for better visualization and label space
-ax.set_ylabel('F1 Score')
-ax.set_title('Baseline Alignment Performance of Zephyr-7B-SFT-Full')
-ax.grid(axis='y', linestyle='--', alpha=0.7)
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
-ax.legend()
+plt.title('Illustrative Training and Validation Loss During LLM Supervised Fine-Tuning', fontsize=14, pad=15)
+plt.xlabel('Epoch', fontsize=12)
+plt.ylabel('Loss (Cross-Entropy)', fontsize=12)
+plt.xticks(epochs)
+plt.yticks(fontsize=10)
+plt.ylim(bottom=0.5, top=2.0)
+plt.legend(fontsize=10)
+plt.grid(True, linestyle=':', alpha=0.7)
+plt.text(0.5, -0.25, 'Note: This figure uses synthetic data to illustrate expected trends, as no actual results were obtained due to experimental failure.',
+         transform=plt.gca().transAxes, fontsize=9, color='gray', ha='center', va='top')
 
 plt.tight_layout()
-plt.savefig('figure_1.png', dpi=150, bbox_inches='tight')
+plt.savefig('figure_1.png', dpi=300, bbox_inches='tight')
 plt.close()
 print("Saved figure_1.png")
