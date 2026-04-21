@@ -570,159 +570,213 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [1
+
+
+LaTeX Warning: Citation `[CITE]' on page 1 undefined on input line 37.
+
+
+LaTeX Warning: Citation `[CITE]' on page 1 undefined on input line 37.
+
+
+Overfull \hbox (6.29503pt too wide) in paragraph at lines 43--44
+[]\TU/lmr/m/n/10.95 We establish a reproducible baseline for Supervised Fine-Tu
+ning (SFT) of the \TU/lmtt/m/n/10.95 Mistral-7B-v0.1
+ []
+
+[1
 
 ]
-Underfull \hbox (badness 1616) in paragraph at lines 45--46
-[]\TU/lmr/m/n/10.95 The establishment of a quantitative baseline, measured by v
-alidation loss, for the
- []
+
+LaTeX Warning: Reference `sec:related_work' on page 2 undefined on input line 4
+9.
 
 
-Overfull \hbox (81.67592pt too wide) in paragraph at lines 45--46
-\TU/lmtt/m/n/10.95 mistralai/Mistral-7B-v0.1 \TU/lmr/m/n/10.95 model fine-tuned
- on the \TU/lmtt/m/n/10.95 details_alignment-handbook__zephyr-7b-sft-full
- []
+LaTeX Warning: Reference `sec:methods' on page 2 undefined on input line 49.
 
 
-LaTeX Warning: Citation `ganguli2022red' on page 2 undefined on input line 56.
+LaTeX Warning: Reference `sec:results' on page 2 undefined on input line 49.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 49.
+
 
 
 LaTeX Warning: Citation `ouyang2022training' on page 2 undefined on input line 
-56.
+54.
+
+
+LaTeX Warning: Citation `chung2022scaling' on page 2 undefined on input line 54
+.
 
 
 LaTeX Warning: Citation `taori2023stanford' on page 2 undefined on input line 5
-6.
+4.
 
 
-LaTeX Warning: Citation `ouyang2022training' on page 2 undefined on input line 
-56.
+LaTeX Warning: Citation `christiano2017deep_rlhf' on page 2 undefined on input 
+line 59.
 
 
-LaTeX Warning: Citation `touvron2023llama' on page 2 undefined on input line 56
-.
+LaTeX Warning: Citation `stiennon2020learning_summarization' on page 2 undefine
+d on input line 59.
 
 
-LaTeX Warning: Citation `rafailov2023direct' on page 2 undefined on input line 
-56.
+LaTeX Warning: Citation `openai2023chatgpt' on page 2 undefined on input line 5
+9.
 
 
-LaTeX Warning: Citation `touvron2023llama' on page 2 undefined on input line 58
-.
-
-
-LaTeX Warning: Citation `rafailov2023direct' on page 2 undefined on input line 
-58.
-
-
-LaTeX Warning: Citation `taori2023stanford' on page 2 undefined on input line 6
-1.
-
-
-LaTeX Warning: Citation `touvron2023llama' on page 2 undefined on input line 61
-.
-
-
-LaTeX Warning: Citation `tunstall2023zephyr' on page 2 undefined on input line 
-61.
+LaTeX Warning: Citation `bai2022constitutional' on page 2 undefined on input li
+ne 59.
 
 [2]
 
-LaTeX Warning: Citation `jiang2023mistral' on page 3 undefined on input line 63
+LaTeX Warning: Citation `rafailov2023direct' on page 3 undefined on input line 
+61.
+
+
+LaTeX Warning: Citation `liang2022holistic' on page 3 undefined on input line 6
+4.
+
+
+LaTeX Warning: Citation `zheng2023llm_arena' on page 3 undefined on input line 
+64.
+
+
+LaTeX Warning: Citation `alpaca_eval_1' on page 3 undefined on input line 64.
+
+
+LaTeX Warning: Citation `alpaca_eval_2' on page 3 undefined on input line 64.
+
+
+LaTeX Warning: Citation `guerreiro2023open_llm_leaderboard' on page 3 undefined
+ on input line 64.
+
+
+LaTeX Warning: Citation `alpaca_eval_2' on page 3 undefined on input line 66.
+
+
+LaTeX Warning: Citation `touvron2023llama' on page 3 undefined on input line 69
 .
 
 
-LaTeX Warning: Citation `tunstall2023zephyr' on page 3 undefined on input line 
-63.
+LaTeX Warning: Citation `touvron2023llama_2' on page 3 undefined on input line 
+69.
 
 
-LaTeX Warning: Citation `taori2023stanford' on page 3 undefined on input line 6
-3.
-
-
-LaTeX Warning: Citation `hu2021lora' on page 3 undefined on input line 66.
-
-
-LaTeX Warning: Citation `dettmers2023qlora' on page 3 undefined on input line 6
-6.
-
-
-LaTeX Warning: Citation `dorefa' on page 3 undefined on input line 66.
-
-
-LaTeX Warning: Citation `dettmers2023qlora' on page 3 undefined on input line 6
-8.
-
-
-LaTeX Warning: Citation `liang2022holistic' on page 3 undefined on input line 7
-1.
-
-
-LaTeX Warning: Citation `srivastava2023aligned' on page 3 undefined on input li
-ne 71.
-
-
-LaTeX Warning: Citation `brown2020language' on page 3 undefined on input line 7
-1.
-
-
-LaTeX Warning: Citation `ouyang2022training' on page 3 undefined on input line 
-71.
-
-
-LaTeX Warning: Citation `touvron2023llama' on page 3 undefined on input line 71
+LaTeX Warning: Citation `jiang2023mistral' on page 3 undefined on input line 69
 .
+
+
+LaTeX Warning: Citation `sft_and_dpo_zephyr' on page 3 undefined on input line 
+69.
+
+
+LaTeX Warning: Citation `alignment_handbook' on page 3 undefined on input line 
+69.
 
 [3]
 
-LaTeX Warning: Citation `touvron2023llama' on page 4 undefined on input line 73
-.
-
-
-LaTeX Warning: Citation `tunstall2023zephyr' on page 4 undefined on input line 
-73.
-
-
-LaTeX Warning: Reference `fig:1' on page 4 undefined on input line 81.
+LaTeX Warning: Reference `fig:1' on page 4 undefined on input line 79.
 
 File: figures/figure_1.png Graphic file (type bmp)
 <figures/figure_1.png>
-[4] [5]
-Overfull \hbox (165.08206pt too wide) in paragraph at lines 105--106
-\TU/lmr/m/n/10.95 The Supervised Fine-Tuning process utilizes the \TU/lmtt/m/n/
-10.95 open-llm-leaderboard-old/details_alignment-handbook__zephyr-7b-sft-full
+
+Overfull \hbox (123.24211pt too wide) in paragraph at lines 89--90
+\TU/lmr/m/n/10.95 the initial research directive referenced \TU/lmtt/m/n/10.95 
+open-llm-leaderboard-old/details_alignment-handbook__zephyr-7b-sft-full\TU/lmr/
+m/n/10.95 ,
  []
 
+[4] [5]
+
+LaTeX Warning: Reference `fig:2' on page 6 undefined on input line 104.
+
+
+Overfull \hbox (46.04347pt too wide) in paragraph at lines 104--105
+\TU/lmr/m/n/10.95 Our Supervised Fine-Tuning (SFT) pipeline is designed to alig
+n the pre-trained \TU/lmtt/m/n/10.95 mistralai/Mistral-7B-v0.1
+ []
+
+File: figures/figure_2.png Graphic file (type bmp)
+<figures/figure_2.png>
 [6]
 
-LaTeX Warning: Reference `fig:2' on page 7 undefined on input line 129.
+LaTeX Warning: Reference `fig:3' on page 7 undefined on input line 144.
 
-File: figures/figure_2.png Graphic file (type bmp)
-<figures/figure_2.png>
-
-Overfull \hbox (191.5373pt too wide) in paragraph at lines 146--147
-\TU/lmr/m/n/10.95 The training and evaluation of our models utilized the \TU/lm
-tt/m/n/10.95 open-llm-leaderboard-old/details_alignment-handbook__zephyr-7b-sft
--full
+[7]
+File: figures/figure_3.png Graphic file (type bmp)
+<figures/figure_3.png>
+ [8]
+Overfull \hbox (218.00563pt too wide) in paragraph at lines 181--182
+\TU/lmr/m/n/10.95 perimental plan, an attempt was made to load the identifier \
+TU/lmtt/m/n/10.95 open-llm-leaderboard-old/details_alignment-handbook__zephyr-7
+b-sft-full
  []
 
-[7] [8]
 
-LaTeX Warning: Reference `fig:3' on page 9 undefined on input line 159.
+Underfull \hbox (badness 1968) in paragraph at lines 181--182
+\TU/lmr/m/n/10.95 chat-like structure, following the convention \TU/lmtt/m/n/10
+.95 <s>[INST] user message [/INST] assistant
+ []
 
+[9]
+Underfull \hbox (badness 5175) in paragraph at lines 197--198
+\TU/lmr/m/n/10.95 The experiment terminated with an \TU/lmtt/m/n/10.95 ImportEr
+ror: cannot import name 'submit' from
+ []
+
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 203.
+[10]
 File: figures/figure_1.png Graphic file (type bmp)
 <figures/figure_1.png>
-[9] [10]
 
-LaTeX Warning: Reference `fig:4' on page 11 undefined on input line 174.
 
+LaTeX Warning: Reference `fig:4' on page 11 undefined on input line 217.
+
+
+LaTeX Warning: Reference `fig:5' on page 11 undefined on input line 217.
+
+
+LaTeX Warning: Reference `fig:4' on page 11 undefined on input line 217.
+
+[11]
 File: figures/figure_2.png Graphic file (type bmp)
 <figures/figure_2.png>
-[11]
+
+
+LaTeX Warning: Reference `fig:5' on page 12 undefined on input line 225.
+
+[12] [13]
+
+LaTeX Warning: Reference `tab:results' on page 14 undefined on input line 259.
+
+
+LaTeX Warning: Reference `fig:performance_chart' on page 14 undefined on input 
+line 259.
+
+
+Underfull \hbox (badness 2689) in paragraph at lines 267--268
+[]\TU/lmr/bx/n/10.95 Critical Evaluation Failure\TU/lmr/m/n/10.95 : The experim
+ent halted at the point of attempt-
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 267--268
+\TU/lmr/m/n/10.95 ing to import evaluation functions from the \TU/lmtt/m/n/10.9
+5 alpaca_eval \TU/lmr/m/n/10.95 library. The specific
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+\TU/lmr/m/n/10.95 error message, \TU/lmtt/m/n/10.95 ImportError: cannot import 
+name 'submit' from 'alpaca_eval'
+ []
+
+[14]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.196 ...tralai/Mistral-7B-v0.1` and the `details_
-                                                  alignment-handbook__zephyr...
-Output written on paper.xdv (11 pages, 278652 bytes).
+l.275 ...nction not being importable from `alpaca_
+                                                  eval` version 0.6.6 remain...
+Output written on paper.xdv (14 pages, 358400 bytes).
