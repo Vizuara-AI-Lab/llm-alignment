@@ -3,41 +3,41 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Set a consistent style for publication quality
-plt.style.use('seaborn-v0_8-darkgrid')
+# Data for the conceptual plot
+categories = ['SFT Model (Hypothetical)', 'Target Threshold']
+values = [48, 55] # Hypothetical win rate for SFT model, and the target threshold
 
-# Data for illustrative loss curves
-epochs = np.arange(1, 4) # 3 epochs as per plan
-train_loss = np.array([1.8, 1.2, 0.9])
-val_loss = np.array([1.6, 1.1, 0.95])
+# Colors for better distinction (colorblind friendly)
+colors = ['#1f77b4', '#ff7f0e'] # Blue for SFT model, Orange for Threshold
 
-# Add some noise for realism, but keep the trend
-np.random.seed(42)
-train_loss = train_loss + np.random.normal(0, 0.05, size=len(epochs))
-val_loss = val_loss + np.random.normal(0, 0.05, size=len(epochs))
+plt.rcParams.update({'font.size': 12})
+fig, ax = plt.subplots(figsize=(7, 5))
 
-# Ensure loss remains positive and generally decreasing
-train_loss = np.maximum(train_loss, 0.5)
-val_loss = np.maximum(val_loss, 0.5)
+# Create the bar chart
+bars = ax.bar(categories, values, color=colors, width=0.6)
+
+# Add value labels on top of the bars
+for bar in bars:
+    yval = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2, yval + 1, f'{yval:.1f}%', ha='center', va='bottom', fontsize=10)
+
+# Add a dashed line for the target threshold across the graph
+ax.axhline(y=55, color='red', linestyle='--', linewidth=1.5, label='Target Threshold (55%)')
 
 
-plt.figure(figsize=(8, 5))
+ax.set_ylim(0, 70) # Set Y-axis limit for better scaling
+ax.set_ylabel('AlpacaEval 2.0 Win Rate (%)', fontsize=12)
+ax.set_title('Conceptual AlpacaEval 2.0 Win Rate (Illustrative)', fontsize=14)
+ax.tick_params(axis='x', rotation=0) # Ensure x-axis labels are horizontal
 
-plt.plot(epochs, train_loss, marker='o', linestyle='-', color='#1f77b4', label='Training Loss')
-plt.plot(epochs, val_loss, marker='x', linestyle='--', color='#ff7f0e', label='Validation Loss')
+# Hide the top and right spines for a cleaner look
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
 
-plt.title('Illustrative Training and Validation Loss During LLM Supervised Fine-Tuning', fontsize=14, pad=15)
-plt.xlabel('Epoch', fontsize=12)
-plt.ylabel('Loss (Cross-Entropy)', fontsize=12)
-plt.xticks(epochs)
-plt.yticks(fontsize=10)
-plt.ylim(bottom=0.5, top=2.0)
-plt.legend(fontsize=10)
-plt.grid(True, linestyle=':', alpha=0.7)
-plt.text(0.5, -0.25, 'Note: This figure uses synthetic data to illustrate expected trends, as no actual results were obtained due to experimental failure.',
-         transform=plt.gca().transAxes, fontsize=9, color='gray', ha='center', va='top')
+# Add a subtle grid
+ax.yaxis.grid(True, linestyle='--', alpha=0.7)
 
 plt.tight_layout()
-plt.savefig('figure_1.png', dpi=300, bbox_inches='tight')
+plt.savefig('figure_1.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("Saved figure_1.png")
