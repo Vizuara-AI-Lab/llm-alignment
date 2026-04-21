@@ -441,14 +441,8 @@ File: microtype.cfg 2022/03/14 v3.0d microtype main configuration file (RS)
 ))
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 25.
- (paper.aux
 
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:2' multiply defined.
-
-)
+No file paper.aux.
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -462,7 +456,7 @@ LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
 5.
- (ts1cmr.fd
+(ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 25.
@@ -524,14 +518,16 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 25.
 LaTeX Info: Redefining \pageref on input line 25.
 LaTeX Info: Redefining \nameref on input line 25.
- (paper.out) (paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
+
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 \c@lstlisting=\count329
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-
 (translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
@@ -574,166 +570,159 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-Underfull \hbox (badness 1331) in paragraph at lines 39--40
-\TU/lmtt/m/n/10.95 HuggingFaceH4/zephyr-7b-sft-full \TU/lmr/m/n/10.95 model, a 
-prominent example of an instruction-tuned
- []
-
-[1
+ [1
 
 ]
+Underfull \hbox (badness 1616) in paragraph at lines 45--46
+[]\TU/lmr/m/n/10.95 The establishment of a quantitative baseline, measured by v
+alidation loss, for the
+ []
 
-LaTeX Warning: Reference `sec:methodology' on page 2 undefined on input line 51
+
+Overfull \hbox (81.67592pt too wide) in paragraph at lines 45--46
+\TU/lmtt/m/n/10.95 mistralai/Mistral-7B-v0.1 \TU/lmr/m/n/10.95 model fine-tuned
+ on the \TU/lmtt/m/n/10.95 details_alignment-handbook__zephyr-7b-sft-full
+ []
+
+
+LaTeX Warning: Citation `ganguli2022red' on page 2 undefined on input line 56.
+
+
+LaTeX Warning: Citation `ouyang2022training' on page 2 undefined on input line 
+56.
+
+
+LaTeX Warning: Citation `taori2023stanford' on page 2 undefined on input line 5
+6.
+
+
+LaTeX Warning: Citation `ouyang2022training' on page 2 undefined on input line 
+56.
+
+
+LaTeX Warning: Citation `touvron2023llama' on page 2 undefined on input line 56
 .
 
 
-LaTeX Warning: Reference `sec:baselines' on page 2 undefined on input line 51.
+LaTeX Warning: Citation `rafailov2023direct' on page 2 undefined on input line 
+56.
 
 
-LaTeX Warning: Reference `sec:experiments' on page 2 undefined on input line 51
+LaTeX Warning: Citation `touvron2023llama' on page 2 undefined on input line 58
 .
 
 
-LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 51.
+LaTeX Warning: Citation `rafailov2023direct' on page 2 undefined on input line 
+58.
 
 
-
-Underfull \hbox (badness 1694) in paragraph at lines 51--52
-\TU/lmr/m/n/10.95 description of our evaluation methodology, including the desi
-gn and components of the
- []
+LaTeX Warning: Citation `taori2023stanford' on page 2 undefined on input line 6
+1.
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 51--52
-\TU/lmr/m/n/10.95 Instruction Following Score. Section [] presents the baseline
- evaluation results for the
- []
+LaTeX Warning: Citation `touvron2023llama' on page 2 undefined on input line 61
+.
 
 
-LaTeX Warning: Citation `alpaca' on page 2 undefined on input line 56.
-
-
-LaTeX Warning: Citation `flan_t5' on page 2 undefined on input line 56.
-
-
-LaTeX Warning: Citation `instructgpt' on page 2 undefined on input line 56.
-
-
-LaTeX Warning: Citation `llama2' on page 2 undefined on input line 56.
-
-
-LaTeX Warning: Citation `dpo' on page 2 undefined on input line 58.
-
-
-Underfull \hbox (badness 1448) in paragraph at lines 60--61
-\TU/lmr/m/n/10.95 *incremental alignment gains* achievable through further SFT 
-with varied datasets (e.g.,
- []
-
-
-Underfull \hbox (badness 1028) in paragraph at lines 60--61
-\TU/lmtt/m/n/10.95 alignment-handbook/ultrachat_200k\TU/lmr/m/n/10.95 , \TU/lmt
-t/m/n/10.95 OpenAssistant/oasst1\TU/lmr/m/n/10.95 ) or the application of DPO
- []
+LaTeX Warning: Citation `tunstall2023zephyr' on page 2 undefined on input line 
+61.
 
 [2]
 
-LaTeX Warning: Citation `glue' on page 3 undefined on input line 63.
+LaTeX Warning: Citation `jiang2023mistral' on page 3 undefined on input line 63
+.
 
 
-LaTeX Warning: Citation `superglue' on page 3 undefined on input line 63.
+LaTeX Warning: Citation `tunstall2023zephyr' on page 3 undefined on input line 
+63.
 
 
-LaTeX Warning: Citation `helm' on page 3 undefined on input line 63.
+LaTeX Warning: Citation `taori2023stanford' on page 3 undefined on input line 6
+3.
 
 
-LaTeX Warning: Citation `mt_bench' on page 3 undefined on input line 65.
+LaTeX Warning: Citation `hu2021lora' on page 3 undefined on input line 66.
 
 
-LaTeX Warning: Citation `alpaca_eval' on page 3 undefined on input line 65.
+LaTeX Warning: Citation `dettmers2023qlora' on page 3 undefined on input line 6
+6.
 
 
-LaTeX Warning: Citation `hh_rlhf' on page 3 undefined on input line 65.
+LaTeX Warning: Citation `dorefa' on page 3 undefined on input line 66.
 
 
-LaTeX Warning: Citation `truthfulqa' on page 3 undefined on input line 65.
+LaTeX Warning: Citation `dettmers2023qlora' on page 3 undefined on input line 6
+8.
 
 
-LaTeX Warning: Citation `realthinking' on page 3 undefined on input line 65.
+LaTeX Warning: Citation `liang2022holistic' on page 3 undefined on input line 7
+1.
 
 
-LaTeX Warning: Citation `llama' on page 3 undefined on input line 70.
+LaTeX Warning: Citation `srivastava2023aligned' on page 3 undefined on input li
+ne 71.
 
 
-LaTeX Warning: Citation `llama2' on page 3 undefined on input line 70.
+LaTeX Warning: Citation `brown2020language' on page 3 undefined on input line 7
+1.
 
 
-LaTeX Warning: Citation `mistral' on page 3 undefined on input line 70.
+LaTeX Warning: Citation `ouyang2022training' on page 3 undefined on input line 
+71.
 
 
-LaTeX Warning: Citation `lora' on page 3 undefined on input line 72.
-
-
-LaTeX Warning: Citation `qlora' on page 3 undefined on input line 72.
+LaTeX Warning: Citation `touvron2023llama' on page 3 undefined on input line 71
+.
 
 [3]
-Underfull \hbox (badness 1931) in paragraph at lines 81--82
-\TU/lmr/m/n/10.95 the alignment properties of large language models (LLMs), spe
-cifically focusing on the
- []
+
+LaTeX Warning: Citation `touvron2023llama' on page 4 undefined on input line 73
+.
+
+
+LaTeX Warning: Citation `tunstall2023zephyr' on page 4 undefined on input line 
+73.
+
+
+LaTeX Warning: Reference `fig:1' on page 4 undefined on input line 81.
 
 File: figures/figure_1.png Graphic file (type bmp)
 <figures/figure_1.png>
-
-Overfull \hbox (44.43506pt too wide) in paragraph at lines 91--92
-\TU/lmr/m/n/10.95 Our initial experiment focuses on establishing a robust basel
-ine for the \TU/lmtt/m/n/10.95 HuggingFaceH4/zephyr-7b-sft-full
+[4] [5]
+Overfull \hbox (165.08206pt too wide) in paragraph at lines 105--106
+\TU/lmr/m/n/10.95 The Supervised Fine-Tuning process utilizes the \TU/lmtt/m/n/
+10.95 open-llm-leaderboard-old/details_alignment-handbook__zephyr-7b-sft-full
  []
+
+[6]
+
+LaTeX Warning: Reference `fig:2' on page 7 undefined on input line 129.
 
 File: figures/figure_2.png Graphic file (type bmp)
 <figures/figure_2.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--96
-[]\TU/lmr/m/n/10.95 Figure 2: |The detailed evaluation protocol for assessing t
-he baseline
- []
-
-[4] [5] [6]
-Overfull \hbox (32.32129pt too wide) in paragraph at lines 122--123
-[]\TU/lmr/bx/n/10.95 Base Models: \TU/lmr/m/n/10.95 Initial SFT experiments wil
-l utilize base models such as \TU/lmtt/m/n/10.95 HuggingFaceH4/mistral-7b
+Overfull \hbox (191.5373pt too wide) in paragraph at lines 146--147
+\TU/lmr/m/n/10.95 The training and evaluation of our models utilized the \TU/lm
+tt/m/n/10.95 open-llm-leaderboard-old/details_alignment-handbook__zephyr-7b-sft
+-full
  []
 
 [7] [8]
-Underfull \hbox (badness 1142) in paragraph at lines 183--184
-\TU/lmr/m/n/10.95 This section details the experimental design, setup, and resu
-lts for evaluating the align-
- []
 
-[9]
+LaTeX Warning: Reference `fig:3' on page 9 undefined on input line 159.
+
 File: figures/figure_1.png Graphic file (type bmp)
 <figures/figure_1.png>
- [10]
+[9] [10]
+
+LaTeX Warning: Reference `fig:4' on page 11 undefined on input line 174.
+
 File: figures/figure_2.png Graphic file (type bmp)
 <figures/figure_2.png>
-File: figures/figure_3.png Graphic file (type bmp)
-<figures/figure_3.png>
- [11] [12] [13] [14]
-File: figures/figure_4.png Graphic file (type bmp)
-<figures/figure_4.png>
-File: figures/figure_4.png Graphic file (type bmp)
-<figures/figure_4.png>
- [15
-
-] [16] (paper.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 7CB42C7195EC0B19213F2395AE466C80;5540.
- )
-Output written on paper.xdv (16 pages, 410740 bytes).
+[11]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.196 ...tralai/Mistral-7B-v0.1` and the `details_
+                                                  alignment-handbook__zephyr...
+Output written on paper.xdv (11 pages, 278652 bytes).
