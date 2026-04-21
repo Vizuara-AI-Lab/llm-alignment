@@ -3,46 +3,37 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Set a consistent style for publication quality
-plt.style.use('seaborn-v0_8-darkgrid')
+# Data for the conceptual plot
+epochs = np.arange(1, 6) # 5 hypothetical epochs
+# Synthetic loss data, decreasing with some noise
+np.random.seed(42) # for reproducibility
+loss = np.array([2.5, 1.8, 1.2, 0.9, 0.7]) + np.random.normal(0, 0.05, 5)
+loss = np.maximum(loss, 0.5) # Ensure loss doesn't go too low
 
-categories = ['Helpfulness', 'Harmlessness', 'Honesty']
-base_model_scores = [3.5, 2.0, 3.0] # Conceptual scores for base model (lower alignment)
-finetuned_model_scores = [4.5, 4.0, 4.0] # Conceptual scores for fine-tuned model (higher alignment)
+plt.rcParams.update({'font.size': 12})
+fig, ax = plt.subplots(figsize=(7, 5))
 
-x = np.arange(len(categories))
-width = 0.35
+# Plot the training loss
+ax.plot(epochs, loss, marker='o', linestyle='-', color='#2ca02c', linewidth=2, markersize=7, label='Training Loss')
 
-fig, ax = plt.subplots(figsize=(9, 6))
-rects1 = ax.bar(x - width/2, base_model_scores, width, label='Base Model (Mistral-7B-v0.1)', color='#8c564b', alpha=0.8)
-rects2 = ax.bar(x + width/2, finetuned_model_scores, width, label='Fine-Tuned Model (Conceptual SFT)', color='#2ca02c', alpha=0.8)
+ax.set_xlabel('Epoch', fontsize=12)
+ax.set_ylabel('Loss', fontsize=12)
+ax.set_title('Conceptual Supervised Fine-Tuning (SFT) Loss Curve (Illustrative)', fontsize=14)
 
-# Add some text for labels and titles
-ax.set_title('Conceptual Comparison of LLM Alignment Characteristics: Base vs. Fine-Tuned Model', fontsize=14, pad=15)
-ax.set_ylabel('Alignment Score (Conceptual)', fontsize=12)
-ax.set_xticks(x)
-ax.set_xticklabels(categories, fontsize=12)
-ax.set_ylim(0, 5.5) # Assuming a 1-5 scale for conceptual scores
+ax.set_xticks(epochs) # Ensure ticks are at each epoch
+ax.set_ylim(bottom=0) # Start y-axis from 0
+
+# Hide the top and right spines for a cleaner look
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+
+# Add a subtle grid
+ax.yaxis.grid(True, linestyle='--', alpha=0.7)
+ax.xaxis.grid(True, linestyle='--', alpha=0.7)
+
 ax.legend(fontsize=10)
 
-# Add value labels on bars for clarity
-def autolabel(rects):
-    for rect in rects:
-        height = rect.get_height()
-        ax.annotate(f'{height:.1f}',
-                    xy=(rect.get_x() + rect.get_width() / 2, height),
-                    xytext=(0, 3),  # 3 points vertical offset
-                    textcoords="offset points",
-                    ha='center', va='bottom', fontsize=9)
-
-autolabel(rects1)
-autolabel(rects2)
-
-plt.grid(axis='y', linestyle=':', alpha=0.7)
-plt.text(0.5, -0.25, 'Note: This figure uses synthetic data to illustrate expected qualitative improvements, as no actual results were obtained due to experimental failure.',
-         transform=plt.gca().transAxes, fontsize=9, color='gray', ha='center', va='top')
-
 plt.tight_layout()
-plt.savefig('figure_2.png', dpi=300, bbox_inches='tight')
+plt.savefig('figure_2.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("Saved figure_2.png")
